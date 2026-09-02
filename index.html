@@ -807,6 +807,101 @@
     </div>
 
   </footer>
+<script>
+const AKT_SHEET_URL =
+  'https://docs.google.com/spreadsheets/d/e/2PACX-1vTmhKZ9XD_fsfwXXAhpzIv-LZGER5UyJ-RI1Lgj3P6viDWqKiuED4k9tNu6qRdp1uueO1XGka22k20m/pub?gid=0&single=true&output=csv';
 
+async function loadAKTContent() {
+  try {
+    const response = await fetch(AKT_SHEET_URL);
+
+    if (!response.ok) {
+      throw new Error('Google Sheet tidak dapat diakses');
+    }
+
+    const csv = await response.text();
+
+    const rows = parseCSV(csv);
+
+    if (rows.length < 2) {
+      console.log('Belum ada konten AKT.');
+      return;
+    }
+
+    const headers = rows[0];
+
+    const content = rows.slice(1).map(row => {
+      const item = {};
+
+      headers.forEach((header, index) => {
+        item[header.trim()] = row[index] || '';
+      });
+
+      return item;
+    });
+
+    console.log('Konten AKT berhasil dimuat:', content);
+
+  } catch (error) {
+    console.error('Gagal mengambil data AKT:', error);
+  }
+}
+
+
+function parseCSV(text) {
+
+  const rows = [];
+  let row = [];
+  let value = '';
+  let insideQuotes = false;
+
+  for (let i = 0; i < text.length; i++) {
+
+    const char = text[i];
+    const next = text[i + 1];
+
+    if (char === '"' && insideQuotes && next === '"') {
+      value += '"';
+      i++;
+    }
+
+    else if (char === '"') {
+      insideQuotes = !insideQuotes;
+    }
+
+    else if (char === ',' && !insideQuotes) {
+      row.push(value);
+      value = '';
+    }
+
+    else if ((char === '\n' || char === '\r') && !insideQuotes) {
+
+      if (char === '\r' && next === '\n') {
+        i++;
+      }
+
+      row.push(value);
+      rows.push(row);
+
+      row = [];
+      value = '';
+    }
+
+    else {
+      value += char;
+    }
+  }
+
+  if (value.length || row.length) {
+    row.push(value);
+    rows.push(row);
+  }
+
+  return rows;
+}
+
+
+loadAKTContent();
+</script>
 </body>
 </html>
