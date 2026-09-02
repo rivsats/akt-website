@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AKT — Download, Tools & Knowledge</title>
+  <meta name="description" content="AKT — portal download software, games, tools, PDF, dan berbagai informasi serta ilmu pengetahuan.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #fcfaff;
+      color: #27223a;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      padding: 22px 0;
+      background: rgba(255,255,255,0.86);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #eee8fa;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 26px;
+      letter-spacing: -1px;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #a879ff, #ff8ecf);
+      display: grid;
+      place-items: center;
+      color: white;
+      box-shadow: 0 10px 25px rgba(174, 124, 255, .25);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: #686178;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #9868e8;
+    }
+
+    .nav-button {
+      padding: 11px 18px;
+      border-radius: 12px;
+      background: #f2eaff;
+      color: #8055c9;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 90px 0 75px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(207,178,255,.35), transparent 28%),
+        radial-gradient(circle at 90% 15%, rgba(255,180,220,.3), transparent 30%),
+        linear-gradient(135deg, #fffaff, #f5f0ff);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 13px;
+      border-radius: 50px;
+      background: white;
+      border: 1px solid #eadffc;
+      color: #8a63c8;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 30px rgba(100,70,140,.07);
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -4px;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #8d61df, #ef82ba);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 570px;
+      color: #706a7e;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .search {
+      background: white;
+      padding: 8px;
+      border-radius: 18px;
+      display: flex;
+      max-width: 610px;
+      box-shadow: 0 18px 50px rgba(111,77,156,.12);
+      border: 1px solid #eee7f7;
+    }
+
+    .search input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      padding: 14px 16px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .search button {
+      border: 0;
+      border-radius: 13px;
+      padding: 0 23px;
+      background: linear-gradient(135deg, #a879ff, #ed83bd);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .hero-art {
+      min-height: 380px;
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(255,255,255,.95), transparent 24%),
+        linear-gradient(145deg, #e8ddff, #fbdcf0);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(128,91,170,.15);
+      border: 1px solid rgba(255,255,255,.8);
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(1px);
+    }
+
+    .orb.one {
+      width: 170px;
+      height: 170px;
+      background: rgba(170,132,255,.42);
+      top: 45px;
+      left: 50px;
+    }
+
+    .orb.two {
+      width: 130px;
+      height: 130px;
+      background: rgba(255,137,199,.4);
+      right: 50px;
+      bottom: 50px;
+    }
+
+    .glass {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-7deg);
+      width: 230px;
+      height: 285px;
+      border-radius: 30px;
+      background: rgba(255,255,255,.55);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.85);
+      box-shadow: 0 30px 70px rgba(110,78,170,.2);
+      padding: 25px;
+    }
+
+    .glass-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #9d72f2, #f18ac4);
+      margin-bottom: 28px;
+    }
+
+    .glass-line {
+      height: 10px;
+      background: rgba(115,83,153,.14);
+      border-radius: 20px;
+      margin: 13px 0;
+    }
+
+    .glass-line.short {
+      width: 65%;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+
+    .section-head h2 {
+      font-size: 30px;
+      letter-spacing: -1.5px;
+    }
+
+    .section-head p {
+      color: #81798d;
+      font-size: 14px;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .category {
+      background: white;
+      border: 1px solid #eee7f7;
+      border-radius: 20px;
+      padding: 22px 14px;
+      text-align: center;
+      transition: .25s;
+    }
+
+    .category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(100,70,140,.1);
+    }
+
+    .category-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      margin: 0 auto 12px;
+      display: grid;
+      place-items: center;
+      background: #f4edff;
+      font-size: 22px;
+    }
+
+    .category span {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #eee7f7;
+      border-radius: 23px;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(100,70,140,.1);
+    }
+
+    .card-image {
+      height: 145px;
+      display: grid;
+      place-items: center;
+      font-size: 45px;
+      background: linear-gradient(135deg, #eee5ff, #ffe7f4);
+    }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 7px;
+      background: #f3edff;
+      color: #8158c8;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .card p {
+      font-size: 12px;
+      color: #88818f;
+    }
+
+    /* KNOWLEDGE */
+
+    .knowledge {
+      background: linear-gradient(135deg, #f6f0ff, #fff4fa);
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .article {
+      background: white;
+      border: 1px solid #eee7f7;
+      border-radius: 24px;
+      padding: 25px;
+      min-height: 190px;
+    }
+
+    .article.featured {
+      background: linear-gradient(135deg, #eadfff, #fce5f3);
+    }
+
+    .article small {
+      color: #8a63c8;
+      font-weight: 800;
+    }
+
+    .article h3 {
+      font-size: 20px;
+      margin: 15px 0 8px;
+    }
+
+    .article p {
+      color: #766e80;
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #282333;
+      color: #eeeaf4;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 45px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+    }
+
+    footer p,
+    footer a {
+      color: #aaa2b5;
+      font-size: 13px;
+    }
+
+    footer a {
+      display: block;
+      margin: 8px 0;
+    }
+
+    .copyright {
+      border-top: 1px solid #40394c;
+      padding-top: 20px;
+      color: #8d8598;
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 900px) {
+      .hero-grid,
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .categories {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media(max-width: 550px) {
+      .hero {
+        padding: 55px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .categories,
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .search button {
+        padding: 0 14px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#" class="logo">
+        <span class="logo-mark">AKT</span>
+        <span>AKT</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#software">Software</a>
+        <a href="#games">Games</a>
+        <a href="#tools">Tools</a>
+        <a href="#knowledge">Knowledge</a>
+      </div>
+
+      <a href="#categories" class="nav-button">
+        Explore
+      </a>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="badge">
+          ✦ Welcome to AKT
+        </div>
+
+        <h1>
+          Download Apapun.
+          <span class="gradient-text">Ilmu Dimanapun.</span>
+        </h1>
+
+        <p>
+          Temukan software, game, tools, PDF, dan berbagai informasi
+          bermanfaat dalam satu tempat yang simpel dan nyaman.
+        </p>
+
+        <div class="search">
+          <input
+            type="text"
+            placeholder="Cari software, game, tools, PDF..."
+          >
+          <button>Search</button>
+        </div>
+
+      </div>
+
+
+      <div class="hero-art">
+
+        <div class="orb one"></div>
+        <div class="orb two"></div>
+
+        <div class="glass">
+
+          <div class="glass-icon"></div>
+
+          <div class="glass-line"></div>
+          <div class="glass-line short"></div>
+          <div class="glass-line"></div>
+          <div class="glass-line short"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- CATEGORIES -->
+  <section id="categories">
+
+    <div class="container">
+
+      <div class="section-head">
+        <div>
+          <h2>Explore Categories</h2>
+          <p>Temukan apa yang kamu butuhkan.</p>
+        </div>
+      </div>
+
+      <div class="categories">
+
+        <a class="category" href="#">
+          <div class="category-icon">💻</div>
+          <span>Software</span>
+        </a>
+
+        <a class="category" href="#">
+          <div class="category-icon">🎮</div>
+          <span>Games</span>
+        </a>
+
+        <a class="category" href="#">
+          <div class="category-icon">🧰</div>
+          <span>Tools</span>
+        </a>
+
+        <a class="category" href="#">
+          <div class="category-icon">📱</div>
+          <span>Android</span>
+        </a>
+
+        <a class="category" href="#">
+          <div class="category-icon">📄</div>
+          <span>PDF</span>
+        </a>
+
+        <a class="category" href="#">
+          <div class="category-icon">📚</div>
+          <span>Ilmu & HR</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LATEST -->
+  <section id="software">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div>
+          <h2>Latest Downloads</h2>
+          <p>Konten terbaru di AKT.</p>
+        </div>
+
+        <a href="#" class="nav-button">View All →</a>
+
+      </div>
+
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-image">🖥️</div>
+          <div class="card-content">
+            <span class="tag">Software</span>
+            <h3>Productivity Tools</h3>
+            <p>Tools untuk membantu pekerjaan.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">🎨</div>
+          <div class="card-content">
+            <span class="tag">Creative</span>
+            <h3>Creative Software</h3>
+            <p>Aplikasi untuk kebutuhan kreatif.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">🎮</div>
+          <div class="card-content">
+            <span class="tag">Games</span>
+            <h3>Featured Games</h3>
+            <p>Game pilihan untuk kamu.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">🧰</div>
+          <div class="card-content">
+            <span class="tag">Tools</span>
+            <h3>Useful Tools</h3>
+            <p>Tools praktis sehari-hari.</p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- KNOWLEDGE -->
+  <section id="knowledge" class="knowledge">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div>
+          <h2>Knowledge & Articles</h2>
+          <p>Berbagi ilmu, tips, dan informasi.</p>
+        </div>
+
+        <a href="#" class="nav-button">Read More →</a>
+
+      </div>
+
+
+      <div class="article-grid">
+
+        <article class="article featured">
+          <small>FEATURED ARTICLE</small>
+
+          <h3>
+            Panduan & ilmu praktis untuk membantu pekerjaan sehari-hari.
+          </h3>
+
+          <p>
+            Nantinya bagian ini dapat berisi artikel, tutorial,
+            tips software, ilmu HR, dan berbagai informasi lainnya.
+          </p>
+        </article>
+
+
+        <article class="article">
+
+          <small>HR & CAREER</small>
+
+          <h3>
+            Human Resources
+          </h3>
+
+          <p>
+            Materi dan informasi seputar dunia HR dan pekerjaan.
+          </p>
+
+        </article>
+
+
+        <article class="article">
+
+          <small>GUIDE</small>
+
+          <h3>
+            Tips & Tutorial
+          </h3>
+
+          <p>
+            Panduan praktis untuk software, tools, dan teknologi.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <h3>AKT</h3>
+
+          <p>
+            Download, tools, games, PDF, dan knowledge
+            dalam satu tempat.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3>Explore</h3>
+
+          <a href="#">Software</a>
+          <a href="#">Games</a>
+          <a href="#">Tools</a>
+          <a href="#">PDF</a>
+
+        </div>
+
+
+        <div>
+
+          <h3>Knowledge</h3>
+
+          <a href="#">Artikel</a>
+          <a href="#">Ilmu & HR</a>
+          <a href="#">Tutorial</a>
+          <a href="#">Tips</a>
+
+        </div>
+
+
+        <div>
+
+          <h3>AKT</h3>
+
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 AKT. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
