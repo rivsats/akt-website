@@ -820,7 +820,6 @@ async function loadAKTContent() {
     }
 
     const csv = await response.text();
-
     const rows = parseCSV(csv);
 
     if (rows.length < 2) {
@@ -828,23 +827,118 @@ async function loadAKTContent() {
       return;
     }
 
-    const headers = rows[0];
+    const headers = rows[0].map(header => header.trim());
 
-    const content = rows.slice(1).map(row => {
-      const item = {};
+    const content = rows
+      .slice(1)
+      .filter(row => row.some(cell => cell.trim() !== ''))
+      .map(row => {
+        const item = {};
 
-      headers.forEach((header, index) => {
-        item[header.trim()] = row[index] || '';
+        headers.forEach((header, index) => {
+          item[header] = row[index] || '';
+        });
+
+        return item;
       });
 
-      return item;
-    });
-
     console.log('Konten AKT berhasil dimuat:', content);
+
+    displayLatestContent(content);
 
   } catch (error) {
     console.error('Gagal mengambil data AKT:', error);
   }
+}
+
+
+function displayLatestContent(content) {
+
+  const cardsContainer = document.querySelector('#software .cards');
+
+  if (!cardsContainer) {
+    console.error('Container Latest Downloads tidak ditemukan.');
+    return;
+  }
+
+  const published = content.filter(item =>
+    item.Status.toLowerCase() === 'published'
+  );
+
+  if (published.length === 0) {
+    cardsContainer.innerHTML = `
+      <p style="grid-column:1/-1;text-align:center;color:#777;">
+        Belum ada konten yang dipublikasikan.
+      </p>
+    `;
+    return;
+  }
+
+  const latest = published.slice(0, 8);
+
+  cardsContainer.innerHTML = latest.map(item => {
+
+    let icon = '📦';
+
+    const type = item.Type.toLowerCase();
+
+    if (type.includes('software')) icon = '💻';
+    if (type.includes('game')) icon = '🎮';
+    if (type.includes('tool')) icon = '🧰';
+    if (type.includes('android')) icon = '📱';
+    if (type.includes('pdf')) icon = '📄';
+
+    return `
+      <article class="card">
+
+        <div class="card-image">
+
+          ${
+            item.Thumbnail
+              ? `<img
+                  src="${escapeHTML(item.Thumbnail)}"
+                  alt="${escapeHTML(item.Title)}"
+                  style="width:100%;height:100%;object-fit:cover;"
+                >`
+              : `<span>${icon}</span>`
+          }
+
+        </div>
+
+        <div class="card-content">
+
+          <span class="tag">
+            ${escapeHTML(item.Category || item.Type)}
+          </span>
+
+          <h3>
+            ${escapeHTML(item.Title)}
+          </h3>
+
+          <p>
+            ${escapeHTML(
+              item.Description || 'Informasi dan detail konten AKT.'
+            )}
+          </p>
+
+        </div>
+
+      </article>
+    `;
+
+  }).join('');
+}
+
+
+function escapeHTML(value) {
+
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+
 }
 
 
@@ -861,20 +955,23 @@ function parseCSV(text) {
     const next = text[i + 1];
 
     if (char === '"' && insideQuotes && next === '"') {
+
       value += '"';
       i++;
-    }
 
-    else if (char === '"') {
+    } else if (char === '"') {
+
       insideQuotes = !insideQuotes;
-    }
 
-    else if (char === ',' && !insideQuotes) {
+    } else if (char === ',' && !insideQuotes) {
+
       row.push(value);
       value = '';
-    }
 
-    else if ((char === '\n' || char === '\r') && !insideQuotes) {
+    } else if (
+      (char === '\n' || char === '\r') &&
+      !insideQuotes
+    ) {
 
       if (char === '\r' && next === '\n') {
         i++;
@@ -885,10 +982,11 @@ function parseCSV(text) {
 
       row = [];
       value = '';
-    }
 
-    else {
+    } else {
+
       value += char;
+
     }
   }
 
