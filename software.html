@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Software — AKT</title>
-  <meta name="description" content="Kumpulan software untuk produktivitas, multimedia, desain, developer, dan kebutuhan sehari-hari di AKT.">
+  <title>AKT Software — Download Software</title>
+  <meta
+    name="description"
+    content="Download software pilihan untuk berbagai kebutuhan di AKT."
+  >
 
   <style>
     * {
@@ -14,402 +17,538 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Inter, Arial, sans-serif;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
       background: #fcfaff;
-      color: #27223a;
+      color: #24202d;
       line-height: 1.6;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
+    button,
+    input {
+      font: inherit;
     }
 
-    /* NAVIGATION */
+    /* =========================
+       NAVBAR
+    ========================= */
 
     nav {
-      padding: 20px 0;
-      background: rgba(255,255,255,.9);
-      backdrop-filter: blur(16px);
+      width: 100%;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid #eee8fa;
+      background: rgba(252, 250, 255, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid #eee8f6;
     }
 
     .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 24px;
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 1.65rem;
       font-weight: 900;
-      font-size: 25px;
-    }
-
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(135deg,#a879ff,#ff8ecf);
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 13px;
-      box-shadow: 0 10px 25px rgba(174,124,255,.25);
+      letter-spacing: -0.06em;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
-      color: #686178;
-      font-size: 14px;
+      align-items: center;
+      gap: 26px;
+      font-size: 0.94rem;
       font-weight: 600;
+      color: #665f70;
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: #9868e8;
+      color: #8b5cf6;
     }
 
-    .nav-button {
-      padding: 10px 17px;
-      border-radius: 12px;
-      background: #f2eaff;
-      color: #8055c9;
-      font-size: 13px;
-      font-weight: 700;
+    .nav-home {
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: #f0eafd;
+      color: #7652c9 !important;
     }
 
-    /* HEADER */
+    .nav-home:hover {
+      background: #e8defc;
+    }
 
-    .page-header {
-      padding: 70px 0 45px;
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 74px 24px 38px;
       text-align: center;
-      background:
-        radial-gradient(circle at 20% 20%,rgba(205,177,255,.35),transparent 30%),
-        radial-gradient(circle at 80% 10%,rgba(255,182,220,.3),transparent 30%),
-        linear-gradient(135deg,#fffaff,#f5f0ff);
     }
 
-    .badge {
-      display: inline-block;
-      padding: 7px 13px;
-      border-radius: 50px;
-      background: white;
-      border: 1px solid #eadffc;
-      color: #8a63c8;
-      font-size: 12px;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: #f2ebff;
+      color: #8258d3;
+      font-size: 0.78rem;
       font-weight: 800;
-      margin-bottom: 17px;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
     }
 
-    h1 {
-      font-size: clamp(38px,5vw,58px);
+    .hero h1 {
+      font-size: clamp(2.3rem, 6vw, 4.5rem);
       line-height: 1.05;
-      letter-spacing: -3px;
-      margin-bottom: 15px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg,#8d61df,#ef82ba);
+      letter-spacing: -0.06em;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, #30273b, #8b5cf6 55%, #ec4899);
       -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
     }
 
-    .page-header p {
-      max-width: 620px;
+    .hero p {
+      max-width: 650px;
       margin: auto;
-      color: #766f81;
-      font-size: 15px;
+      color: #766e80;
+      font-size: 1.05rem;
     }
 
-    /* SEARCH */
+    /* =========================
+       CONTROLS
+    ========================= */
 
-    .search-area {
-      padding: 25px 0 10px;
-      background: #fcfaff;
+    .controls {
+      max-width: 1200px;
+      margin: 18px auto 42px;
+      padding: 0 24px;
     }
 
-    .search {
-      max-width: 680px;
-      margin: auto;
+    .search-wrap {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9c94a8;
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+
+    #searchInput {
+      width: 100%;
+      border: 1px solid #e8e0f1;
       background: white;
-      padding: 7px;
-      border: 1px solid #eee7f7;
-      border-radius: 17px;
-      display: flex;
-      box-shadow: 0 15px 40px rgba(100,70,140,.09);
+      border-radius: 18px;
+      padding: 16px 18px 16px 48px;
+      outline: none;
+      color: #302b38;
+      box-shadow: 0 8px 28px rgba(65, 38, 99, 0.05);
+      transition: 0.2s ease;
     }
 
-    .search input {
-      flex: 1;
-      border: 0;
-      outline: 0;
-      padding: 13px 16px;
-      font-size: 14px;
-    }
-
-    .search button {
-      border: 0;
-      border-radius: 12px;
-      padding: 0 22px;
-      background: linear-gradient(135deg,#a879ff,#ed83bd);
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    /* FILTER */
-
-    .filters {
-      padding: 28px 0 5px;
+    #searchInput:focus {
+      border-color: #b995ef;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.10);
     }
 
     .filter-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 9px;
     }
 
-    .filter {
-      border: 1px solid #e9e1f4;
+    .filter-btn {
+      border: 1px solid #e6deef;
       background: white;
-      padding: 9px 15px;
-      border-radius: 50px;
-      color: #71697d;
-      font-size: 12px;
-      font-weight: 700;
+      color: #71697c;
+      border-radius: 999px;
+      padding: 8px 15px;
       cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 650;
+      transition: 0.2s ease;
     }
 
-    .filter.active,
-    .filter:hover {
-      background: #f0e7ff;
-      color: #8055c9;
-      border-color: #dfcdfb;
+    .filter-btn:hover {
+      border-color: #c6a8f2;
+      color: #8155d2;
+      transform: translateY(-1px);
     }
 
-    /* CONTENT */
-
-    .content-section {
-      padding: 45px 0 80px;
+    .filter-btn.active {
+      background: linear-gradient(135deg, #8b5cf6, #d946ef);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 8px 18px rgba(139, 92, 246, 0.2);
     }
 
-    .section-top {
+    /* =========================
+       CONTENT
+    ========================= */
+
+    .content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 24px 80px;
+    }
+
+    .result-info {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 25px;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      color: #847b8d;
+      font-size: 0.9rem;
     }
 
-    .section-top h2 {
-      font-size: 25px;
-      letter-spacing: -1px;
-    }
-
-    .result-count {
-      color: #8b8392;
-      font-size: 13px;
-    }
-
-    .cards {
+    .software-grid {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 20px;
     }
 
-    .card {
+    /* =========================
+       CARD
+    ========================= */
+
+    .software-card {
       background: white;
-      border: 1px solid #eee7f7;
+      border: 1px solid #eee7f4;
       border-radius: 22px;
       overflow: hidden;
-      transition: .25s;
+      box-shadow: 0 10px 30px rgba(56, 36, 75, 0.055);
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
     }
 
-    .card:hover {
+    .software-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(100,70,140,.11);
+      border-color: #dfcef7;
+      box-shadow: 0 18px 40px rgba(78, 45, 105, 0.10);
     }
 
     .card-image {
       height: 155px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg,#eee5ff,#ffe7f4);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(216, 191, 255, 0.35), transparent 32%),
+        radial-gradient(circle at 80% 80%, rgba(251, 207, 232, 0.35), transparent 34%),
+        #f7f3fc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
+      border-bottom: 1px solid #f0eaf5;
     }
 
     .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+      border-radius: 18px;
+      transition: transform 0.25s ease;
     }
 
-    .icon {
-      width: 70px;
-      height: 70px;
-      border-radius: 23px;
-      display: grid;
-      place-items: center;
-      font-size: 32px;
-      background: rgba(255,255,255,.72);
-      box-shadow: 0 15px 30px rgba(100,70,140,.1);
+    .software-card:hover .card-image img {
+      transform: scale(1.07);
     }
 
-    .card-content {
-      padding: 18px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 5px 9px;
-      border-radius: 7px;
-      background: #f3edff;
-      color: #8158c8;
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 9px;
-    }
-
-    .card h3 {
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .card-description {
-      font-size: 12px;
-      color: #89818f;
-      min-height: 40px;
-    }
-
-    .card-meta {
+    .fallback-icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 20px;
       display: flex;
-      gap: 8px;
-      margin-top: 13px;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border: 1px solid #e8def4;
+      font-size: 2.5rem;
+      box-shadow: 0 8px 20px rgba(70, 40, 90, 0.08);
+    }
+
+    .card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-tag {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #f2ebff;
+      color: #8057d0;
+      font-size: 0.72rem;
+      font-weight: 800;
+      margin-bottom: 11px;
+    }
+
+    .card-body h3 {
+      font-size: 1.05rem;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      color: #302a38;
+      letter-spacing: -0.02em;
+    }
+
+    .description {
+      color: #7c7485;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 15px;
     }
 
     .meta {
-      background: #faf8fd;
-      border: 1px solid #eee9f4;
-      padding: 5px 8px;
-      border-radius: 7px;
-      font-size: 10px;
-      color: #827989;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 7px;
+      margin-top: auto;
+      margin-bottom: 15px;
+    }
+
+    .meta-item {
+      background: #faf8fc;
+      border: 1px solid #f0eaf5;
+      border-radius: 10px;
+      padding: 7px 9px;
+      min-width: 0;
+    }
+
+    .meta-label {
+      display: block;
+      font-size: 0.64rem;
+      color: #a097a9;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 750;
+    }
+
+    .meta-value {
+      display: block;
+      color: #5f5769;
+      font-size: 0.75rem;
+      font-weight: 700;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .estimated {
+      color: #8b5cf6;
     }
 
     .download-btn {
-      display: block;
-      text-align: center;
-      margin-top: 15px;
-      padding: 10px;
-      border-radius: 11px;
-      background: #f2eaff;
-      color: #8055c9;
-      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      border-radius: 13px;
+      padding: 11px 14px;
+      background: linear-gradient(135deg, #8b5cf6, #d946ef);
+      color: white;
+      font-size: 0.86rem;
       font-weight: 800;
+      transition: 0.2s ease;
     }
 
     .download-btn:hover {
-      background: #e9dcff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(139, 92, 246, 0.23);
     }
 
-    /* LOADING */
-
-    .loading {
-      grid-column: 1/-1;
-      text-align: center;
-      padding: 60px;
-      color: #8b8392;
+    .download-btn.disabled {
+      background: #eeeaf2;
+      color: #9b94a1;
+      pointer-events: none;
     }
 
-    .empty {
-      grid-column: 1/-1;
+    /* =========================
+       STATES
+    ========================= */
+
+    .loading,
+    .empty,
+    .error {
+      grid-column: 1 / -1;
       text-align: center;
-      padding: 60px;
-      background: white;
-      border: 1px solid #eee7f7;
+      padding: 60px 20px;
+      border: 1px dashed #ddd2e8;
       border-radius: 22px;
-      color: #81798d;
+      background: white;
+      color: #82788b;
     }
 
-    /* FOOTER */
+    .loading-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      animation: pulse 1.3s infinite;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 0.45;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      background: #282333;
-      color: #eeeaf4;
-      padding: 50px 0 25px;
+      border-top: 1px solid #eee7f3;
+      background: #faf8fd;
+      padding: 30px 24px;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 35px;
-      margin-bottom: 40px;
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: #8b8294;
+      font-size: 0.84rem;
     }
 
-    footer h3 {
-      margin-bottom: 14px;
+    .footer-logo {
+      font-weight: 900;
+      color: #7c52c8;
     }
 
-    footer p,
-    footer a {
-      color: #aaa2b5;
-      font-size: 13px;
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1050px) {
+      .software-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
-    footer a {
-      display: block;
-      margin: 7px 0;
-    }
-
-    .copyright {
-      border-top: 1px solid #40394c;
-      padding-top: 18px;
-      color: #8d8598;
-      font-size: 12px;
-    }
-
-    @media(max-width:950px) {
-      .cards {
-        grid-template-columns: repeat(3,1fr);
+    @media (max-width: 780px) {
+      .nav-inner {
+        padding: 14px 18px;
       }
 
       .nav-links {
+        gap: 13px;
+        font-size: 0.8rem;
+      }
+
+      .nav-home {
         display: none;
       }
-    }
 
-    @media(max-width:700px) {
-      .cards {
-        grid-template-columns: repeat(2,1fr);
+      .hero {
+        padding: 55px 18px 28px;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
+      .controls,
+      .content {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .software-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
       }
     }
 
-    @media(max-width:480px) {
-      .cards {
+    @media (max-width: 520px) {
+      .logo {
+        font-size: 1.4rem;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a:nth-child(4),
+      .nav-links a:nth-child(5) {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 0.92rem;
+      }
+
+      .software-grid {
         grid-template-columns: 1fr;
       }
 
-      .search button {
-        padding: 0 14px;
+      .card-image {
+        height: 145px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
@@ -417,129 +556,100 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       NAVBAR
+  ========================== -->
 
   <nav>
-    <div class="container nav-inner">
+    <div class="nav-inner">
 
-      <a href="index.html" class="logo">
-        <span class="logo-mark">AKT</span>
-        <span>AKT</span>
-      </a>
+      <a href="index.html" class="logo">AKT</a>
 
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="software.html">Software</a>
-        <a href="#">Games</a>
+        <a href="games.html">Games</a>
         <a href="#">Tools</a>
         <a href="#">Knowledge</a>
+        <a href="index.html" class="nav-home">← Home</a>
       </div>
-
-      <a href="index.html" class="nav-button">
-        ← Home
-      </a>
 
     </div>
   </nav>
 
 
-  <!-- HEADER -->
+  <!-- =========================
+       HERO
+  ========================== -->
 
-  <header class="page-header">
+  <header class="hero">
 
-    <div class="container">
-
-      <div class="badge">✦ AKT SOFTWARE</div>
-
-      <h1>
-        Software untuk
-        <span class="gradient-text">semua kebutuhan.</span>
-      </h1>
-
-      <p>
-        Temukan berbagai software untuk produktivitas,
-        multimedia, desain, pekerjaan, developer, dan kebutuhan
-        sehari-hari.
-      </p>
-
+    <div class="eyebrow">
+      ✦ AKT SOFTWARE
     </div>
+
+    <h1>Software untuk semua kebutuhan.</h1>
+
+    <p>
+      Temukan berbagai software pilihan untuk produktivitas,
+      kreativitas, komunikasi, multimedia, dan kebutuhan sehari-hari.
+    </p>
 
   </header>
 
 
-  <!-- SEARCH -->
+  <!-- =========================
+       CONTROLS
+  ========================== -->
 
-  <div class="search-area">
+  <section class="controls">
 
-    <div class="container">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
 
-      <div class="search">
-
-        <input
-          id="searchInput"
-          type="text"
-          placeholder="Cari software..."
-        >
-
-        <button onclick="renderSoftware()">
-          Search
-        </button>
-
-      </div>
-
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Cari software..."
+        autocomplete="off"
+      >
     </div>
 
-  </div>
-
-
-  <!-- FILTER -->
-
-  <div class="filters">
-
-    <div class="container">
-
-      <div class="filter-list" id="filterList">
-
-        <button
-          class="filter active"
-          data-category="all"
-          onclick="selectCategory('all')">
-          Semua
-        </button>
-
-      </div>
-
+    <div
+      class="filter-list"
+      id="filterList"
+    >
+      <button
+        class="filter-btn active"
+        data-category="All"
+        type="button"
+        onclick="selectCategory('All', this)"
+      >
+        Semua
+      </button>
     </div>
 
-  </div>
+  </section>
 
 
-  <!-- SOFTWARE -->
+  <!-- =========================
+       SOFTWARE CONTENT
+  ========================== -->
 
-  <main class="content-section">
+  <main class="content">
 
-    <div class="container">
+    <div class="result-info">
+      <span id="resultCount">Memuat software...</span>
+    </div>
 
-      <div class="section-top">
+    <div
+      class="software-grid"
+      id="softwareGrid"
+    >
 
-        <h2>Software</h2>
-
-        <span
-          id="resultCount"
-          class="result-count">
-          Memuat...
-        </span>
-
-      </div>
-
-      <div
-        id="softwareGrid"
-        class="cards">
-
-        <div class="loading">
-          ✨ Memuat software AKT...
-        </div>
-
+      <div class="loading">
+        <div class="loading-icon">◌</div>
+        <div>Memuat data software...</div>
       </div>
 
     </div>
@@ -547,61 +657,21 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
-    <div class="container">
+    <div class="footer-inner">
 
-      <div class="footer-grid">
-
-        <div>
-
-          <h3>AKT</h3>
-
-          <p>
-            Download, tools, games, PDF, dan knowledge
-            dalam satu tempat.
-          </p>
-
-        </div>
-
-        <div>
-
-          <h3>Explore</h3>
-
-          <a href="software.html">Software</a>
-          <a href="#">Games</a>
-          <a href="#">Tools</a>
-          <a href="#">PDF</a>
-
-        </div>
-
-        <div>
-
-          <h3>Knowledge</h3>
-
-          <a href="#">Artikel</a>
-          <a href="#">Ilmu & HR</a>
-          <a href="#">Tutorial</a>
-
-        </div>
-
-        <div>
-
-          <h3>AKT</h3>
-
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-
-        </div>
-
+      <div>
+        <span class="footer-logo">AKT</span>
+        <span> — Downloads & Knowledge</span>
       </div>
 
-      <div class="copyright">
-        © 2026 AKT. All rights reserved.
+      <div>
+        © <span id="year"></span> AKT
       </div>
 
     </div>
@@ -609,26 +679,148 @@
   </footer>
 
 
-  <!-- GOOGLE SHEETS -->
-
   <script>
+    /* =========================================================
+       GOOGLE SHEETS CSV
+    ========================================================= */
 
     const AKT_SHEET_URL =
-      'https://docs.google.com/spreadsheets/d/e/2PACX-1vTmhKZ9XD_fsfwXXAhpzIv-LZGER5UyJ-RI1Lgj3P6viDWqKiuED4k9tNu6qRdp1uueO1XGka22k20m/pub?gid=0&single=true&output=csv';
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmhKZ9XD_fsfwXXAhpzIv-LZGER5UyJ-RI1Lgj3P6viDWqKiuED4k9tNu6qRdp1uueO1XGka22k20m/pub?gid=0&single=true&output=csv";
 
-    let allSoftware = [];
-    let selectedCategory = 'all';
 
+    /* =========================================================
+       GLOBAL STATE
+    ========================================================= */
+
+    let softwareData = [];
+    let selectedCategory = "All";
+    let searchTerm = "";
+
+
+    /* =========================================================
+       ESTIMATED SOFTWARE SIZE
+       
+       Dipakai hanya jika kolom Size di Google Sheets kosong.
+       Tanda "~" menunjukkan bahwa angka tersebut adalah estimasi.
+    ========================================================= */
+
+    function getEstimatedSize(title) {
+
+      const estimates = {
+
+        "Google Chrome": "~120 MB",
+        "Mozilla Firefox": "~90 MB",
+        "Microsoft Edge": "~130 MB",
+        "VLC Media Player": "~40 MB",
+        "7-Zip": "~2 MB",
+        "WinRAR": "~4 MB",
+        "LibreOffice": "~350 MB",
+        "Adobe Acrobat Reader": "~300 MB",
+        "Zoom Workplace": "~100 MB",
+        "Microsoft Teams": "~150 MB",
+        "Slack": "~150 MB",
+        "Visual Studio Code": "~110 MB",
+        "Git": "~60 MB",
+        "GitHub Desktop": "~200 MB",
+        "Notepad++": "~5 MB",
+        "OBS Studio": "~130 MB",
+        "GIMP": "~250 MB",
+        "ShareX": "~30 MB",
+        "Microsoft PowerToys": "~150 MB",
+        "SumatraPDF": "~10 MB"
+
+      };
+
+      const normalizedTitle =
+        String(title || "")
+          .trim()
+          .toLowerCase();
+
+      for (const key in estimates) {
+
+        if (
+          normalizedTitle === key.toLowerCase()
+        ) {
+          return estimates[key];
+        }
+
+      }
+
+      return "~100 MB";
+    }
+
+
+    /* =========================================================
+       GET SOFTWARE THUMBNAIL
+       
+       Prioritas:
+       1. Thumbnail dari Google Sheets
+       2. Icon berdasarkan domain Download URL
+       3. Fallback icon
+    ========================================================= */
+
+    function getSoftwareIcon(item) {
+
+      const thumbnail =
+        String(item.Thumbnail || "").trim();
+
+      if (thumbnail) {
+        return thumbnail;
+      }
+
+      const downloadUrl =
+        String(item["Download URL"] || "").trim();
+
+      if (downloadUrl) {
+
+        try {
+
+          const url =
+            new URL(downloadUrl);
+
+          const domain =
+            url.hostname.replace(/^www\./, "");
+
+          if (domain) {
+
+            return (
+              "https://www.google.com/s2/favicons?domain=" +
+              encodeURIComponent(domain) +
+              "&sz=256"
+            );
+
+          }
+
+        } catch (error) {
+          // fallback icon digunakan di bawah
+        }
+
+      }
+
+      return "";
+    }
+
+
+    /* =========================================================
+       LOAD SOFTWARE
+    ========================================================= */
 
     async function loadSoftware() {
+
+      const grid =
+        document.getElementById("softwareGrid");
 
       try {
 
         const response =
-          await fetch(AKT_SHEET_URL);
+          await fetch(AKT_SHEET_URL, {
+            cache: "no-store"
+          });
 
         if (!response.ok) {
-          throw new Error('Google Sheet tidak dapat diakses');
+          throw new Error(
+            "Gagal mengambil data Google Sheets."
+          );
         }
 
         const csv =
@@ -637,109 +829,150 @@
         const rows =
           parseCSV(csv);
 
-        if (rows.length < 2) {
-          showEmpty();
-          return;
+        if (!rows.length) {
+          throw new Error(
+            "Data Google Sheets kosong."
+          );
         }
 
         const headers =
-          rows[0].map(header => header.trim());
-
-        const content =
-          rows.slice(1)
-          .filter(row =>
-            row.some(cell => cell.trim() !== '')
-          )
-          .map(row => {
-
-            const item = {};
-
-            headers.forEach((header,index) => {
-              item[header] =
-                row[index] || '';
-            });
-
-            return item;
-
-          });
-
-
-        allSoftware =
-          content.filter(item =>
-            item.Type &&
-            item.Type.toLowerCase() === 'software' &&
-            item.Status &&
-            item.Status.toLowerCase() === 'published'
+          rows[0].map(header =>
+            String(header).trim()
           );
 
+        softwareData =
+          rows
+            .slice(1)
+            .filter(row =>
+              row.some(cell =>
+                String(cell || "").trim() !== ""
+              )
+            )
+            .map(row => {
+
+              const item = {};
+
+              headers.forEach(
+                (header, index) => {
+
+                  item[header] =
+                    row[index] !== undefined
+                      ? String(row[index]).trim()
+                      : "";
+
+                }
+              );
+
+              return item;
+
+            })
+            .filter(item => {
+
+              const type =
+                String(item.Type || "")
+                  .trim()
+                  .toLowerCase();
+
+              const status =
+                String(item.Status || "")
+                  .trim()
+                  .toLowerCase();
+
+              return (
+                type === "software" &&
+                (
+                  !status ||
+                  status === "published"
+                )
+              );
+
+            });
 
         createCategoryFilters();
+
         renderSoftware();
 
-        console.log(
-          'Software AKT:',
-          allSoftware
-        );
-
-      } catch(error) {
+      } catch (error) {
 
         console.error(error);
 
-        document.getElementById(
-          'softwareGrid'
-        ).innerHTML = `
-          <div class="empty">
-            <h3>Gagal memuat data</h3>
-            <p>
-              Silakan refresh halaman beberapa saat lagi.
-            </p>
+        grid.innerHTML = `
+          <div class="error">
+            <strong>Gagal memuat software.</strong>
+            <br>
+            <span>
+              Pastikan Google Sheets sudah dipublish sebagai CSV
+              dan dapat diakses publik.
+            </span>
           </div>
         `;
+
+        document.getElementById("resultCount")
+          .textContent = "Data tidak dapat dimuat.";
 
       }
 
     }
 
 
+    /* =========================================================
+       CREATE CATEGORY FILTERS
+    ========================================================= */
+
     function createCategoryFilters() {
 
-      const categories =
-        [...new Set(
-          allSoftware
-          .map(item => item.Category)
-          .filter(Boolean)
-        )];
-
-
       const filterList =
-        document.getElementById(
-          'filterList'
+        document.getElementById("filterList");
+
+      const categories =
+        [
+          ...new Set(
+            softwareData
+              .map(item =>
+                String(item.Category || "").trim()
+              )
+              .filter(Boolean)
+          )
+        ]
+        .sort((a, b) =>
+          a.localeCompare(b)
         );
 
-
       filterList.innerHTML = `
-
         <button
-          class="filter active"
-          data-category="all"
-          onclick="selectCategory('all')">
+          class="filter-btn active"
+          data-category="All"
+          type="button"
+          onclick="selectCategory('All', this)"
+        >
           Semua
         </button>
-
       `;
-
 
       categories.forEach(category => {
 
         const button =
-          document.createElement('button');
+          document.createElement("button");
 
-        button.className = 'filter';
+        button.className =
+          "filter-btn";
 
-        button.textContent = category;
+        button.type =
+          "button";
 
-        button.onclick = () =>
-          selectCategory(category);
+        button.dataset.category =
+          category;
+
+        button.textContent =
+          category;
+
+        button.onclick =
+          function () {
+            selectCategory(
+              category,
+              this
+            );
+          };
 
         filterList.appendChild(button);
 
@@ -748,228 +981,412 @@
     }
 
 
-    function selectCategory(category) {
+    /* =========================================================
+       SELECT CATEGORY
+    ========================================================= */
+
+    function selectCategory(
+      category,
+      button
+    ) {
 
       selectedCategory =
         category;
 
       document
-        .querySelectorAll('.filter')
-        .forEach(button => {
+        .querySelectorAll(".filter-btn")
+        .forEach(btn =>
+          btn.classList.remove("active")
+        );
 
-          button.classList.remove('active');
-
-          if (
-            button.dataset.category === category
-          ) {
-            button.classList.add('active');
-          }
-
-          if (
-            category === 'all' &&
-            button.textContent === 'Semua'
-          ) {
-            button.classList.add('active');
-          }
-
-        });
+      if (button) {
+        button.classList.add("active");
+      }
 
       renderSoftware();
 
     }
 
 
+    /* =========================================================
+       SEARCH
+    ========================================================= */
+
+    document
+      .getElementById("searchInput")
+      .addEventListener(
+        "input",
+        function () {
+
+          searchTerm =
+            this.value
+              .trim()
+              .toLowerCase();
+
+          renderSoftware();
+
+        }
+      );
+
+
+    /* =========================================================
+       RENDER SOFTWARE
+    ========================================================= */
+
     function renderSoftware() {
 
       const grid =
-        document.getElementById(
-          'softwareGrid'
-        );
-
-      const search =
-        document.getElementById(
-          'searchInput'
-        ).value
-        .toLowerCase()
-        .trim();
-
+        document.getElementById("softwareGrid");
 
       let filtered =
-        allSoftware.filter(item => {
+        softwareData.filter(item => {
 
-          const matchesCategory =
-            selectedCategory === 'all' ||
-            item.Category === selectedCategory;
+          const category =
+            String(item.Category || "")
+              .trim();
 
-          const searchableText =
-            `${item.Title}
-              ${item.Category}
-              ${item.Description}
-              ${item.Developer}`.toLowerCase();
+          const title =
+            String(item.Title || "")
+              .toLowerCase();
 
-          const matchesSearch =
-            !search ||
-            searchableText.includes(search);
+          const description =
+            String(item.Description || "")
+              .toLowerCase();
 
-          return matchesCategory &&
-                 matchesSearch;
+          const developer =
+            String(item.Developer || "")
+              .toLowerCase();
+
+          const categoryMatch =
+            selectedCategory === "All" ||
+            category === selectedCategory;
+
+          const searchMatch =
+            !searchTerm ||
+            title.includes(searchTerm) ||
+            description.includes(searchTerm) ||
+            developer.includes(searchTerm) ||
+            category.toLowerCase().includes(searchTerm);
+
+          return (
+            categoryMatch &&
+            searchMatch
+          );
 
         });
 
 
-      document.getElementById(
-        'resultCount'
-      ).textContent =
-        `${filtered.length} software`;
+      document.getElementById("resultCount")
+        .textContent =
+        `${filtered.length} software ditemukan`;
 
 
-      if (filtered.length === 0) {
+      if (!filtered.length) {
+
         showEmpty();
+
         return;
       }
 
 
       grid.innerHTML =
-        filtered.map(item => {
-
-          const thumbnail =
-            item.Thumbnail
-              ? `
-                <img
-                  src="${escapeHTML(item.Thumbnail)}"
-                  alt="${escapeHTML(item.Title)}"
-                >
-              `
-              : `
-                <div class="icon">💻</div>
-              `;
-
-
-          const download =
-            item['Download URL']
-              ? `
-                <a
-                  class="download-btn"
-                  href="${escapeHTML(item['Download URL'])}"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Download →
-                </a>
-              `
-              : '';
-
-
-          return `
-
-            <article class="card">
-
-              <div class="card-image">
-                ${thumbnail}
-              </div>
-
-              <div class="card-content">
-
-                <span class="tag">
-                  ${escapeHTML(
-                    item.Category || 'Software'
-                  )}
-                </span>
-
-                <h3>
-                  ${escapeHTML(
-                    item.Title
-                  )}
-                </h3>
-
-                <p class="card-description">
-                  ${escapeHTML(
-                    item.Description ||
-                    'Informasi software AKT.'
-                  )}
-                </p>
-
-                <div class="card-meta">
-
-                  ${
-                    item.Version
-                      ? `<span class="meta">
-                          v${escapeHTML(item.Version)}
-                        </span>`
-                      : ''
-                  }
-
-                  ${
-                    item.OS
-                      ? `<span class="meta">
-                          ${escapeHTML(item.OS)}
-                        </span>`
-                      : ''
-                  }
-
-                </div>
-
-                ${download}
-
-              </div>
-
-            </article>
-
-          `;
-
-        }).join('');
+        filtered
+          .map(item =>
+            createSoftwareCard(item)
+          )
+          .join("");
 
     }
 
+
+    /* =========================================================
+       CREATE SOFTWARE CARD
+    ========================================================= */
+
+    function createSoftwareCard(item) {
+
+      const title =
+        escapeHTML(
+          item.Title || "Untitled Software"
+        );
+
+      const category =
+        escapeHTML(
+          item.Category || "Software"
+        );
+
+      const description =
+        escapeHTML(
+          item.Description ||
+          "Software pilihan dari AKT."
+        );
+
+      const version =
+        escapeHTML(
+          item.Version || "-"
+        );
+
+      const os =
+        escapeHTML(
+          item.OS || "-"
+        );
+
+      const developer =
+        escapeHTML(
+          item.Developer || "-"
+        );
+
+
+      /* -------------------------------------------------------
+         SIZE
+      ------------------------------------------------------- */
+
+      const sheetSize =
+        String(item.Size || "")
+          .trim();
+
+      const hasSheetSize =
+        sheetSize !== "";
+
+      const sizeValue =
+        hasSheetSize
+          ? sheetSize
+          : getEstimatedSize(item.Title);
+
+      const size =
+        escapeHTML(sizeValue);
+
+
+      /* -------------------------------------------------------
+         THUMBNAIL
+      ------------------------------------------------------- */
+
+      const imageUrl =
+        getSoftwareIcon(item);
+
+
+      let imageHTML = "";
+
+      if (imageUrl) {
+
+        imageHTML = `
+          <img
+            src="${escapeHTML(imageUrl)}"
+            alt="${title}"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+
+          <div
+            class="fallback-icon"
+            style="display:none;"
+            aria-hidden="true"
+          >
+            💻
+          </div>
+        `;
+
+      } else {
+
+        imageHTML = `
+          <div
+            class="fallback-icon"
+            aria-hidden="true"
+          >
+            💻
+          </div>
+        `;
+
+      }
+
+
+      /* -------------------------------------------------------
+         DOWNLOAD URL
+      ------------------------------------------------------- */
+
+      const rawDownloadUrl =
+        String(item["Download URL"] || "")
+          .trim();
+
+      let downloadHTML = "";
+
+      if (rawDownloadUrl) {
+
+        const safeDownloadUrl =
+          escapeHTML(rawDownloadUrl);
+
+        downloadHTML = `
+          <a
+            class="download-btn"
+            href="${safeDownloadUrl}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ↓ Download
+          </a>
+        `;
+
+      } else {
+
+        downloadHTML = `
+          <span
+            class="download-btn disabled"
+          >
+            Download
+          </span>
+        `;
+
+      }
+
+
+      /* -------------------------------------------------------
+         ESTIMATE CLASS
+      ------------------------------------------------------- */
+
+      const sizeClass =
+        hasSheetSize
+          ? "meta-value"
+          : "meta-value estimated";
+
+
+      return `
+        <article class="software-card">
+
+          <div class="card-image">
+            ${imageHTML}
+          </div>
+
+          <div class="card-body">
+
+            <span class="card-tag">
+              ${category}
+            </span>
+
+            <h3>
+              ${title}
+            </h3>
+
+            <p class="description">
+              ${description}
+            </p>
+
+            <div class="meta">
+
+              <div class="meta-item">
+                <span class="meta-label">
+                  Size
+                </span>
+
+                <span class="${sizeClass}">
+                  ${size}
+                </span>
+              </div>
+
+              <div class="meta-item">
+                <span class="meta-label">
+                  Version
+                </span>
+
+                <span class="meta-value">
+                  ${version}
+                </span>
+              </div>
+
+              <div class="meta-item">
+                <span class="meta-label">
+                  OS
+                </span>
+
+                <span class="meta-value">
+                  ${os}
+                </span>
+              </div>
+
+              <div class="meta-item">
+                <span class="meta-label">
+                  Developer
+                </span>
+
+                <span class="meta-value">
+                  ${developer}
+                </span>
+              </div>
+
+            </div>
+
+            ${downloadHTML}
+
+          </div>
+
+        </article>
+      `;
+
+    }
+
+
+    /* =========================================================
+       EMPTY STATE
+    ========================================================= */
 
     function showEmpty() {
 
-      document.getElementById(
-        'softwareGrid'
-      ).innerHTML = `
+      const grid =
+        document.getElementById("softwareGrid");
 
+      grid.innerHTML = `
         <div class="empty">
 
-          <h3>
-            Software tidak ditemukan
-          </h3>
+          <div style="font-size:2rem;margin-bottom:10px;">
+            🔎
+          </div>
 
-          <p>
-            Coba gunakan kata pencarian
-            atau kategori lainnya.
-          </p>
+          <strong>
+            Software tidak ditemukan.
+          </strong>
+
+          <br>
+
+          <span>
+            Coba gunakan kata kunci atau kategori lain.
+          </span>
 
         </div>
-
       `;
-
-      document.getElementById(
-        'resultCount'
-      ).textContent =
-        '0 software';
 
     }
 
+
+    /* =========================================================
+       ESCAPE HTML
+    ========================================================= */
 
     function escapeHTML(value) {
 
-      return String(value)
-        .replace(/&/g,'&amp;')
-        .replace(/</g,'&lt;')
-        .replace(/>/g,'&gt;')
-        .replace(/"/g,'&quot;')
-        .replace(/'/g,'&#039;');
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 
     }
 
+
+    /* =========================================================
+       CSV PARSER
+       Support:
+       - comma
+       - quoted fields
+       - comma inside quoted fields
+       - double quotes inside quoted fields
+    ========================================================= */
 
     function parseCSV(text) {
 
       const rows = [];
-
       let row = [];
-      let value = '';
+      let field = "";
       let insideQuotes = false;
-
 
       for (
         let i = 0;
@@ -980,70 +1397,63 @@
         const char =
           text[i];
 
-        const next =
+        const nextChar =
           text[i + 1];
 
 
-        if (
-          char === '"' &&
-          insideQuotes &&
-          next === '"'
-        ) {
+        if (char === '"') {
 
-          value += '"';
+          if (
+            insideQuotes &&
+            nextChar === '"'
+          ) {
 
-          i++;
+            field += '"';
+            i++;
 
-        }
+          } else {
 
-        else if (
-          char === '"'
-        ) {
+            insideQuotes =
+              !insideQuotes;
 
-          insideQuotes =
-            !insideQuotes;
+          }
 
-        }
-
-        else if (
-          char === ',' &&
+        } else if (
+          char === "," &&
           !insideQuotes
         ) {
 
-          row.push(value);
+          row.push(field);
+          field = "";
 
-          value = '';
-
-        }
-
-        else if (
-          (
-            char === '\n' ||
-            char === '\r'
-          ) &&
+        } else if (
+          (char === "\n" || char === "\r") &&
           !insideQuotes
         ) {
 
           if (
-            char === '\r' &&
-            next === '\n'
+            char === "\r" &&
+            nextChar === "\n"
           ) {
             i++;
           }
 
-          row.push(value);
+          row.push(field);
+          field = "";
 
-          rows.push(row);
+          if (
+            row.some(cell =>
+              String(cell).trim() !== ""
+            )
+          ) {
+            rows.push(row);
+          }
 
           row = [];
 
-          value = '';
+        } else {
 
-        }
-
-        else {
-
-          value += char;
+          field += char;
 
         }
 
@@ -1051,29 +1461,39 @@
 
 
       if (
-        value.length ||
-        row.length
+        field !== "" ||
+        row.length > 0
       ) {
 
-        row.push(value);
+        row.push(field);
 
-        rows.push(row);
+        if (
+          row.some(cell =>
+            String(cell).trim() !== ""
+          )
+        ) {
+          rows.push(row);
+        }
 
       }
-
 
       return rows;
 
     }
 
 
-    document
-      .getElementById('searchInput')
-      .addEventListener(
-        'input',
-        renderSoftware
-      );
+    /* =========================================================
+       YEAR
+    ========================================================= */
 
+    document.getElementById("year")
+      .textContent =
+      new Date().getFullYear();
+
+
+    /* =========================================================
+       START
+    ========================================================= */
 
     loadSoftware();
 
