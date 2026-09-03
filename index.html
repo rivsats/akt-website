@@ -6,9 +6,13 @@
 
 <title>AKT — Download Apa Pun. Ilmu Di Mana Pun.</title>
 
-<meta name="description" content="AKT menyediakan software, game, tools, PDF, dan berbagai informasi bermanfaat dalam satu tempat.">
+<meta
+    name="description"
+    content="AKT menyediakan software, game, tools, PDF, dan berbagai informasi bermanfaat dalam satu tempat."
+>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -20,9 +24,17 @@ html{
 }
 
 body{
-    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
     background:#fcfaff;
     color:#292238;
+    line-height:1.6;
 }
 
 a{
@@ -30,28 +42,45 @@ a{
     color:inherit;
 }
 
+button,
+input{
+    font:inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
 nav{
     position:sticky;
     top:0;
     z-index:1000;
+
     background:rgba(255,255,255,.94);
     backdrop-filter:blur(18px);
+
     border-bottom:1px solid #eee5f5;
 }
 
 .nav-inner{
     max-width:1200px;
     margin:auto;
+
     padding:13px 24px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
+    gap:20px;
 }
 
 .logo{
     display:flex;
     align-items:center;
     gap:9px;
+
     font-weight:900;
     font-size:1.3rem;
 }
@@ -59,20 +88,38 @@ nav{
 .logo-mark{
     width:34px;
     height:34px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     border-radius:10px;
+
     color:#fff;
     font-size:.78rem;
-    background:linear-gradient(135deg,#b86df1,#e878ca);
-    box-shadow:0 8px 20px rgba(181,104,242,.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            #b86df1,
+            #e878ca
+        );
+
+    box-shadow:
+        0 8px 20px rgba(181,104,242,.25);
 }
 
 .logo-text{
-    background:linear-gradient(135deg,#332442,#965bd5);
+    background:
+        linear-gradient(
+            135deg,
+            #332442,
+            #965bd5
+        );
+
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
 }
 
@@ -80,9 +127,15 @@ nav{
     display:flex;
     align-items:center;
     gap:25px;
+
     color:#6e6577;
+
     font-size:.77rem;
     font-weight:700;
+}
+
+.nav-links a{
+    transition:.2s ease;
 }
 
 .nav-links a:hover{
@@ -91,106 +144,194 @@ nav{
 
 .nav-explore{
     padding:8px 15px;
+
     border-radius:10px;
+
     background:#f1e6ff;
-    color:#8051ca!important;
+
+    color:#8051ca !important;
 }
 
 
-/* HERO */
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
     overflow:hidden;
+
     background:
-        radial-gradient(circle at 85% 20%,rgba(237,184,244,.34),transparent 32%),
-        radial-gradient(circle at 5% 90%,rgba(190,165,255,.22),transparent 32%),
-        linear-gradient(135deg,#fcf7ff,#f8efff 55%,#fff3fb);
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(237,184,244,.34),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 5% 90%,
+            rgba(190,165,255,.22),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #fcf7ff,
+            #f8efff 55%,
+            #fff3fb
+        );
 }
 
 .hero-inner{
     max-width:1200px;
     min-height:390px;
+
     margin:auto;
     padding:55px 24px;
+
     display:grid;
     grid-template-columns:1fr 1fr;
+
     align-items:center;
+
     gap:50px;
 }
 
 .welcome{
     display:inline-flex;
+    align-items:center;
+
     padding:6px 12px;
+
     border-radius:999px;
+
     background:#fff;
+
     border:1px solid #e8daf5;
+
     color:#8051ce;
+
     font-size:.68rem;
     font-weight:800;
+
     margin-bottom:17px;
 }
 
 .hero h1{
-    font-size:clamp(2.7rem,5vw,4.2rem);
+    font-size:
+        clamp(
+            2.7rem,
+            5vw,
+            4.2rem
+        );
+
     line-height:.99;
+
     letter-spacing:-.065em;
+
     margin-bottom:20px;
 }
 
 .gradient-text{
     display:block;
-    background:linear-gradient(135deg,#9b58db,#d96ac7);
+
+    background:
+        linear-gradient(
+            135deg,
+            #9b58db,
+            #d96ac7
+        );
+
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
 }
 
 .hero-description{
     max-width:570px;
+
     color:#70677a;
+
     font-size:.87rem;
     line-height:1.7;
+
     margin-bottom:23px;
 }
 
 .search-box{
     max-width:590px;
+
     display:flex;
     align-items:center;
+
     padding:5px;
+
     background:#fff;
+
     border:1px solid #eadff2;
+
     border-radius:14px;
-    box-shadow:0 10px 27px rgba(78,46,105,.07);
+
+    box-shadow:
+        0 10px 27px rgba(78,46,105,.07);
 }
 
 .search-box input{
     flex:1;
+
     min-width:0;
+
     border:0;
     outline:0;
+
     padding:12px 14px;
+
     background:transparent;
+
+    color:#30283a;
+
     font-size:.78rem;
 }
 
 .search-box button{
     border:0;
+
     padding:10px 19px;
+
     border-radius:10px;
+
     color:#fff;
+
     cursor:pointer;
+
     font-size:.74rem;
     font-weight:800;
-    background:linear-gradient(135deg,#a263eb,#d966ca);
+
+    background:
+        linear-gradient(
+            135deg,
+            #a263eb,
+            #d966ca
+        );
+
+    transition:.2s ease;
+}
+
+.search-box button:hover{
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 8px 18px rgba(148,83,204,.20);
 }
 
 
-/* HERO VISUAL */
+/* =========================================================
+   HERO VISUAL
+========================================================= */
 
 .hero-visual{
     min-height:275px;
+
     position:relative;
+
     display:flex;
     align-items:center;
     justify-content:center;
@@ -198,52 +339,97 @@ nav{
 
 .visual-orb{
     position:absolute;
+
     width:215px;
     height:215px;
+
     border-radius:50%;
-    background:radial-gradient(circle at 35% 30%,#d8b9ff,#b995ef 45%,#e9a7d9);
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #d8b9ff,
+            #b995ef 45%,
+            #e9a7d9
+        );
+
     opacity:.72;
+
+    animation:
+        orbFloat 5s ease-in-out infinite;
 }
 
 .visual-card{
     width:190px;
     height:215px;
+
     position:relative;
     z-index:2;
+
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
     gap:17px;
+
     border-radius:22px;
-    background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(255,245,255,.88));
-    border:1px solid rgba(255,255,255,.9);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.96),
+            rgba(255,245,255,.88)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.9);
+
     transform:rotate(-7deg);
-    box-shadow:0 25px 45px rgba(111,65,142,.17);
+
+    box-shadow:
+        0 25px 45px rgba(111,65,142,.17);
+
+    animation:
+        cardFloat 5s ease-in-out infinite;
 }
 
 .visual-icon{
     width:58px;
     height:58px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     border-radius:16px;
+
     color:#fff;
+
     font-size:1.7rem;
-    background:linear-gradient(135deg,#a763ef,#e17acb);
+
+    background:
+        linear-gradient(
+            135deg,
+            #a763ef,
+            #e17acb
+        );
 }
 
 .visual-lines{
     width:110px;
+
     display:flex;
     flex-direction:column;
+
     gap:9px;
 }
 
 .visual-line{
     height:7px;
+
     border-radius:999px;
+
     background:#dfd3e9;
 }
 
@@ -255,13 +441,46 @@ nav{
     width:88%;
 }
 
+@keyframes orbFloat{
 
-/* SECTIONS */
+    0%,
+    100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes cardFloat{
+
+    0%,
+    100%{
+        transform:
+            rotate(-7deg)
+            translateY(0);
+    }
+
+    50%{
+        transform:
+            rotate(-4deg)
+            translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
 
 .section{
     max-width:1200px;
+
     margin:auto;
-    padding:43px 24px 0;
+
+    padding:
+        43px 24px 0;
 }
 
 .section-heading{
@@ -270,59 +489,86 @@ nav{
 
 .section-heading h2{
     font-size:1.2rem;
+
     letter-spacing:-.035em;
+
     margin-bottom:3px;
 }
 
 .section-heading p{
     font-size:.68rem;
+
     color:#887e91;
 }
 
 
-/* CATEGORY */
+/* =========================================================
+   CATEGORY
+========================================================= */
 
 .category-grid{
     display:grid;
-    grid-template-columns:repeat(6,1fr);
+
+    grid-template-columns:
+        repeat(6,1fr);
+
     gap:10px;
 }
 
 .category-card{
     min-height:67px;
+
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
     gap:5px;
+
     border-radius:11px;
+
     border:1px solid #e9e0f1;
+
     background:#fff;
+
     color:#62596d;
+
     font-size:.63rem;
     font-weight:750;
-    transition:.2s;
+
+    transition:.2s ease;
 }
 
 .category-card:hover{
     transform:translateY(-3px);
+
     border-color:#d9c5f0;
-    box-shadow:0 9px 22px rgba(81,45,110,.07);
+
+    box-shadow:
+        0 9px 22px rgba(81,45,110,.07);
+
     color:#8754d0;
 }
 
 .category-icon{
     width:25px;
     height:25px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     border-radius:8px;
+
     background:#f3ecfc;
+
+    font-size:.82rem;
 }
 
 
-/* LATEST */
+/* =========================================================
+   LATEST
+========================================================= */
 
 .latest-section{
     padding-top:58px;
@@ -333,223 +579,374 @@ nav{
     display:flex;
     align-items:flex-end;
     justify-content:space-between;
+
     gap:20px;
+
     margin-bottom:17px;
 }
 
 .view-all{
     padding:8px 14px;
+
     border-radius:10px;
+
     background:#f1e8ff;
+
     color:#8051ca;
+
     font-size:.7rem;
     font-weight:800;
+
+    transition:.2s ease;
+}
+
+.view-all:hover{
+    background:#e8dcfa;
 }
 
 .latest-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:19px;
 }
 
 
-/* CARDS */
+/* =========================================================
+   CARDS
+========================================================= */
 
 .download-card{
     overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
     background:#fff;
+
     border:1px solid #ece4f2;
+
     border-radius:19px;
-    box-shadow:0 8px 25px rgba(62,38,82,.045);
-    transition:.22s;
+
+    box-shadow:
+        0 8px 25px rgba(62,38,82,.045);
+
+    transition:.22s ease;
 }
 
 .download-card:hover{
     transform:translateY(-5px);
-    box-shadow:0 17px 35px rgba(68,39,92,.09);
+
+    box-shadow:
+        0 17px 35px rgba(68,39,92,.09);
 }
 
 .card-visual{
     height:200px;
+
     position:relative;
+
     display:flex;
     align-items:center;
     justify-content:center;
 
     background:
-        radial-gradient(circle at 20% 20%,rgba(207,176,255,.42),transparent 34%),
-        radial-gradient(circle at 80% 80%,rgba(250,189,228,.40),transparent 34%),
-        linear-gradient(135deg,#eee1ff,#ffeaf8);
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(207,176,255,.42),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(250,189,228,.40),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #eee1ff,
+            #ffeaf8
+        );
 }
 
 .featured-badge{
     position:absolute;
+
     top:17px;
     left:17px;
+
     padding:6px 11px;
+
     border-radius:9px;
+
     background:rgba(255,255,255,.94);
+
     color:#8752d5;
+
     font-size:.61rem;
     font-weight:850;
+
+    box-shadow:
+        0 4px 12px rgba(80,45,100,.06);
 }
 
 .thumbnail-wrap{
     width:105px;
     height:105px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     border-radius:27px;
+
     background:rgba(255,255,255,.72);
-    border:1px solid rgba(255,255,255,.9);
-    box-shadow:0 14px 28px rgba(87,45,110,.08);
+
+    border:
+        1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 14px 28px rgba(87,45,110,.08);
+
     overflow:hidden;
 }
 
 .thumbnail-wrap img{
     width:72px;
     height:72px;
+
     object-fit:contain;
+
     border-radius:16px;
 }
 
 .thumbnail-fallback{
     width:72px;
     height:72px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     border-radius:18px;
+
     background:#fff;
+
     font-size:2.1rem;
+
+    box-shadow:
+        0 8px 20px rgba(80,40,100,.07);
 }
 
 .card-content{
     padding:18px;
+
+    display:flex;
+    flex-direction:column;
+
+    flex:1;
 }
 
 .card-category{
     display:inline-flex;
+    align-self:flex-start;
+
     padding:5px 9px;
+
     border-radius:8px;
+
     background:#f1e8ff;
+
     color:#8152ca;
+
     font-size:.6rem;
     font-weight:850;
+
     text-transform:uppercase;
+
     margin-bottom:10px;
 }
 
 .card-content h3{
     font-size:1rem;
+
     line-height:1.3;
+
     margin-bottom:8px;
+
+    color:#282131;
 }
 
 .card-description{
     min-height:66px;
+
     color:#807687;
+
     font-size:.73rem;
+
     line-height:1.6;
+
     display:-webkit-box;
+
     -webkit-line-clamp:3;
     -webkit-box-orient:vertical;
+
     overflow:hidden;
+
     margin-bottom:13px;
 }
 
 .card-meta{
     display:flex;
     flex-wrap:wrap;
+
     gap:6px;
+
+    margin-top:auto;
     margin-bottom:13px;
 }
 
 .meta-pill{
     padding:5px 8px;
+
     border-radius:7px;
+
     background:#faf8fc;
+
     border:1px solid #f0eaf4;
+
     color:#786e81;
+
     font-size:.6rem;
+}
+
+.meta-pill.estimated{
+    color:#8956cf;
 }
 
 .card-download{
     width:100%;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     padding:10px;
+
     border-radius:10px;
+
     color:#fff;
-    background:linear-gradient(135deg,#9b60e5,#d568c8);
+
+    background:
+        linear-gradient(
+            135deg,
+            #9b60e5,
+            #d568c8
+        );
+
     font-size:.72rem;
     font-weight:800;
+
+    transition:.2s ease;
+}
+
+.card-download:hover{
+    box-shadow:
+        0 8px 18px rgba(147,82,202,.20);
 }
 
 .card-download.disabled{
     background:#eeeaf2;
+
     color:#968d9d;
+
+    pointer-events:none;
 }
 
 
-/* LOADING / ERROR */
+/* =========================================================
+   LOADING / ERROR
+========================================================= */
 
 .latest-loading,
 .latest-empty,
 .latest-error{
     grid-column:1/-1;
+
     padding:50px 20px;
+
     text-align:center;
+
     border:1px dashed #ddd1e8;
+
     border-radius:18px;
+
     background:#fff;
+
     color:#82778c;
+
     font-size:.85rem;
 }
 
 .latest-error strong{
     display:block;
+
     color:#765c87;
+
     margin-bottom:7px;
 }
 
 
-/* FOOTER */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
     padding:30px 24px;
+
     border-top:1px solid #eee6f4;
+
     background:#faf8fd;
 }
 
 .footer-inner{
     max-width:1200px;
+
     margin:auto;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
+    gap:20px;
+
     color:#887f91;
+
     font-size:.72rem;
 }
 
 .footer-logo{
     font-weight:900;
+
     color:#7e50c9;
 }
 
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:1050px){
 
     .latest-grid{
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:
+            repeat(3,1fr);
     }
 
     .category-grid{
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:
+            repeat(3,1fr);
     }
 }
 
@@ -557,6 +954,7 @@ footer{
 
     .hero-inner{
         grid-template-columns:1fr;
+
         text-align:center;
     }
 
@@ -566,12 +964,22 @@ footer{
         margin-right:auto;
     }
 
+    .hero-visual{
+        min-height:230px;
+    }
+
     .latest-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .nav-links{
         gap:12px;
+    }
+
+    .nav-links a:nth-child(4),
+    .nav-links a:nth-child(5){
+        display:none;
     }
 }
 
@@ -583,6 +991,7 @@ footer{
 
     .nav-links{
         gap:9px;
+
         font-size:.65rem;
     }
 
@@ -591,7 +1000,8 @@ footer{
     }
 
     .hero-inner{
-        padding:45px 18px 30px;
+        padding:
+            45px 18px 30px;
     }
 
     .hero h1{
@@ -604,7 +1014,8 @@ footer{
     }
 
     .category-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .latest-grid{
@@ -613,38 +1024,84 @@ footer{
 
     .footer-inner{
         flex-direction:column;
+
         gap:8px;
+
+        text-align:center;
     }
 }
+
 </style>
 </head>
 
 <body>
 
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
 <nav>
+
 <div class="nav-inner">
 
 <a href="index.html" class="logo">
-<span class="logo-mark">AK</span>
-<span class="logo-text">AKT</span>
+
+<span class="logo-mark">
+AK
+</span>
+
+<span class="logo-text">
+AKT
+</span>
+
 </a>
 
+
 <div class="nav-links">
-<a href="index.html">Home</a>
-<a href="software.html">Software</a>
-<a href="games.html">Games</a>
-<a href="#">Tools</a>
-<a href="#">Knowledge</a>
-<a href="#latest" class="nav-explore">Explore</a>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="software.html">
+Software
+</a>
+
+<a href="games.html">
+Games
+</a>
+
+<a href="#">
+Tools
+</a>
+
+<a href="#">
+Knowledge
+</a>
+
+<a
+    href="#latest"
+    class="nav-explore"
+>
+Explore
+</a>
+
 </div>
 
 </div>
+
 </nav>
 
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <header class="hero">
 
 <div class="hero-inner">
+
 
 <div>
 
@@ -652,26 +1109,37 @@ footer{
 ✦ Welcome to AKT
 </div>
 
+
 <h1>
+
 Download Apa Pun.
+
 <span class="gradient-text">
 Ilmu Dimana Pun.
 </span>
+
 </h1>
 
+
 <p class="hero-description">
+
 Temukan software, game, tools, PDF, dan berbagai
 informasi bermanfaat dalam satu tempat yang simpel
 dan nyaman.
+
 </p>
 
-<form class="search-box" id="heroSearch">
+
+<form
+    class="search-box"
+    id="heroSearch"
+>
 
 <input
-type="search"
-id="heroSearchInput"
-placeholder="Cari software, game, tools, PDF..."
-autocomplete="off"
+    type="search"
+    id="heroSearchInput"
+    placeholder="Cari software, game, tools, PDF..."
+    autocomplete="off"
 >
 
 <button type="submit">
@@ -689,22 +1157,31 @@ Search
 
 <div class="visual-card">
 
-<div class="visual-icon">✦</div>
+<div class="visual-icon">
+✦
+</div>
 
 <div class="visual-lines">
+
 <div class="visual-line"></div>
 <div class="visual-line"></div>
 <div class="visual-line"></div>
-</div>
 
 </div>
 
 </div>
+
+</div>
+
 
 </div>
 
 </header>
 
+
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
 
 <section class="section">
 
@@ -723,42 +1200,116 @@ Temukan apa yang kamu butuhkan.
 
 <div class="category-grid">
 
-<a href="software.html" class="category-card">
-<span class="category-icon">💻</span>
-<span>Software</span>
+
+<a
+    href="software.html"
+    class="category-card"
+>
+
+<span class="category-icon">
+💻
+</span>
+
+<span>
+Software
+</span>
+
 </a>
 
-<a href="games.html" class="category-card">
-<span class="category-icon">🎮</span>
-<span>Games</span>
+
+<a
+    href="games.html"
+    class="category-card"
+>
+
+<span class="category-icon">
+🎮
+</span>
+
+<span>
+Games
+</span>
+
 </a>
 
-<a href="#" class="category-card">
-<span class="category-icon">🧰</span>
-<span>Tools</span>
+
+<a
+    href="#"
+    class="category-card"
+>
+
+<span class="category-icon">
+🧰
+</span>
+
+<span>
+Tools
+</span>
+
 </a>
 
-<a href="#" class="category-card">
-<span class="category-icon">📱</span>
-<span>Android</span>
+
+<a
+    href="#"
+    class="category-card"
+>
+
+<span class="category-icon">
+📱
+</span>
+
+<span>
+Android
+</span>
+
 </a>
 
-<a href="#" class="category-card">
-<span class="category-icon">📄</span>
-<span>PDF</span>
+
+<a
+    href="#"
+    class="category-card"
+>
+
+<span class="category-icon">
+📄
+</span>
+
+<span>
+PDF
+</span>
+
 </a>
 
-<a href="#" class="category-card">
-<span class="category-icon">📚</span>
-<span>Ilmu & HR</span>
+
+<a
+    href="#"
+    class="category-card"
+>
+
+<span class="category-icon">
+📚
+</span>
+
+<span>
+Ilmu & HR
+</span>
+
 </a>
+
 
 </div>
 
 </section>
 
 
-<section class="section latest-section" id="latest">
+<!-- =========================================================
+     LATEST DOWNLOADS
+========================================================= -->
+
+<section
+    class="section latest-section"
+    id="latest"
+>
 
 <div class="latest-heading">
 
@@ -774,14 +1325,21 @@ Konten terbaru di AKT.
 
 </div>
 
-<a href="software.html" class="view-all">
+
+<a
+    href="software.html"
+    class="view-all"
+>
 View All →
 </a>
 
 </div>
 
 
-<div class="latest-grid" id="latestGrid">
+<div
+    class="latest-grid"
+    id="latestGrid"
+>
 
 <div class="latest-loading">
 Menghubungkan ke AKT Content...
@@ -792,17 +1350,33 @@ Menghubungkan ke AKT Content...
 </section>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer>
 
 <div class="footer-inner">
 
 <div>
-<span class="footer-logo">AKT</span>
-<span> — Downloads & Knowledge</span>
+
+<span class="footer-logo">
+AKT
+</span>
+
+<span>
+— Downloads & Knowledge
+</span>
+
 </div>
 
+
 <div>
-© <span id="year"></span> AKT
+
+©
+<span id="year"></span>
+AKT
+
 </div>
 
 </div>
@@ -814,86 +1388,19 @@ Menghubungkan ke AKT Content...
 
 /*
 ==========================================================
- AKT GOOGLE SHEETS
+ GOOGLE SHEETS
 ==========================================================
 
-Kita memakai Published Google Sheets milik kamu.
-Tidak menggunakan API key.
+URL INI SUDAH DIPERBAIKI.
+
+PENTING:
+Tidak ada angka 5 tambahan setelah:
+LZGER5Uy
 ==========================================================
 */
 
 const AKT_SHEET_URL =
-"https://docs.google.com/spreadsheets/d/e/2PACX-1vTmhKZ9XD_fsfwXXAhpzIv-LZGER5Uy5-J-RI1Lgj3P6viDWqKiuED4k9tNu6qRdp1uueO1XGka22k20m/pub?gid=0&single=true&output=csv";
-
-
-/*
-==========================================================
- CSV PARSER
-==========================================================
-*/
-
-function parseCSV(text){
-
-    const rows=[];
-    let row=[];
-    let cell="";
-    let insideQuotes=false;
-
-    for(let i=0;i<text.length;i++){
-
-        const char=text[i];
-        const next=text[i+1];
-
-        if(char === '"'){
-
-            if(insideQuotes && next === '"'){
-                cell += '"';
-                i++;
-            }else{
-                insideQuotes=!insideQuotes;
-            }
-
-        }else if(char === "," && !insideQuotes){
-
-            row.push(cell);
-            cell="";
-
-        }else if(
-            (char === "\n" || char === "\r") &&
-            !insideQuotes
-        ){
-
-            if(char === "\r" && next === "\n"){
-                i++;
-            }
-
-            row.push(cell);
-            cell="";
-
-            if(row.some(v => String(v).trim() !== "")){
-                rows.push(row);
-            }
-
-            row=[];
-
-        }else{
-
-            cell += char;
-
-        }
-    }
-
-    if(cell !== "" || row.length){
-
-        row.push(cell);
-
-        if(row.some(v => String(v).trim() !== "")){
-            rows.push(row);
-        }
-    }
-
-    return rows;
-}
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vTmhKZ9XD_fsfwXXAhpzIv-LZGER5Uy-J-RI1Lgj3P6viDWqKiuED4k9tNu6qRdp1uueO1XGka22k20m/pub?gid=0&single=true&output=csv";
 
 
 /*
@@ -931,85 +1438,335 @@ function escapeHTML(value){
 
 /*
 ==========================================================
+ CSV PARSER
+==========================================================
+*/
+
+function parseCSV(text){
+
+    const rows=[];
+
+    let row=[];
+    let cell="";
+
+    let insideQuotes=false;
+
+
+    for(
+        let i=0;
+        i<text.length;
+        i++
+    ){
+
+        const char=text[i];
+        const next=text[i+1];
+
+
+        if(char === '"'){
+
+            if(
+                insideQuotes &&
+                next === '"'
+            ){
+
+                cell += '"';
+
+                i++;
+
+            }else{
+
+                insideQuotes =
+                    !insideQuotes;
+
+            }
+
+        }
+
+
+        else if(
+            char === "," &&
+            !insideQuotes
+        ){
+
+            row.push(cell);
+
+            cell="";
+
+        }
+
+
+        else if(
+            (
+                char === "\n" ||
+                char === "\r"
+            ) &&
+            !insideQuotes
+        ){
+
+            if(
+                char === "\r" &&
+                next === "\n"
+            ){
+                i++;
+            }
+
+
+            row.push(cell);
+
+            cell="";
+
+
+            if(
+                row.some(
+                    value =>
+                        clean(value) !== ""
+                )
+            ){
+
+                rows.push(row);
+
+            }
+
+
+            row=[];
+
+        }
+
+
+        else{
+
+            cell += char;
+
+        }
+
+    }
+
+
+    if(
+        cell !== "" ||
+        row.length > 0
+    ){
+
+        row.push(cell);
+
+
+        if(
+            row.some(
+                value =>
+                    clean(value) !== ""
+            )
+        ){
+
+            rows.push(row);
+
+        }
+
+    }
+
+
+    return rows;
+
+}
+
+
+/*
+==========================================================
+ ESTIMATED SOFTWARE SIZE
+==========================================================
+*/
+
+function getEstimatedSoftwareSize(title){
+
+    const estimates={
+
+        "google chrome":"~120 MB",
+        "mozilla firefox":"~90 MB",
+        "microsoft edge":"~130 MB",
+        "vlc media player":"~40 MB",
+        "7-zip":"~2 MB",
+        "winrar":"~4 MB",
+        "libreoffice":"~350 MB",
+        "adobe acrobat reader":"~300 MB",
+        "zoom workplace":"~100 MB",
+        "microsoft teams":"~150 MB",
+        "slack":"~150 MB",
+        "visual studio code":"~110 MB",
+        "git":"~60 MB",
+        "github desktop":"~200 MB",
+        "notepad++":"~5 MB",
+        "obs studio":"~130 MB",
+        "gimp":"~250 MB",
+        "sharex":"~30 MB",
+        "microsoft powertoys":"~150 MB",
+        "sumatrapdf":"~10 MB"
+
+    };
+
+
+    const key =
+        clean(title).toLowerCase();
+
+
+    return (
+        estimates[key] ||
+        "~100 MB"
+    );
+
+}
+
+
+/*
+==========================================================
  FALLBACK ICON
 ==========================================================
 */
 
-function getIcon(item){
+function getFallbackIcon(item){
 
     const type =
-        clean(item.Type).toLowerCase();
+        clean(
+            item.Type
+        ).toLowerCase();
+
 
     const category =
-        clean(item.Category).toLowerCase();
+        clean(
+            item.Category
+        ).toLowerCase();
+
 
     const combined =
-        type + " " + category;
+        type +
+        " " +
+        category;
 
-    if(combined.includes("game")){
+
+    if(
+        combined.includes("game") ||
+        combined.includes("emulator")
+    ){
         return "🎮";
     }
 
-    if(combined.includes("tool")){
+
+    if(
+        combined.includes("tool")
+    ){
         return "🧰";
     }
 
-    if(combined.includes("pdf")){
+
+    if(
+        combined.includes("android")
+    ){
+        return "📱";
+    }
+
+
+    if(
+        combined.includes("pdf")
+    ){
         return "📄";
     }
 
+
     if(
-        combined.includes("hr") ||
         combined.includes("knowledge") ||
+        combined.includes("hr") ||
         combined.includes("ilmu")
     ){
         return "📚";
     }
 
-    if(combined.includes("android")){
-        return "📱";
-    }
 
     return "💻";
+
 }
 
 
 /*
 ==========================================================
  THUMBNAIL
+
+PRIORITAS:
+
+1. Thumbnail dari Google Sheets.
+2. Icon dari domain Download URL.
+3. Fallback emoji.
 ==========================================================
 */
 
 function getThumbnail(item){
 
-    const thumb =
-        clean(item.Thumbnail);
+    const thumbnail =
+        clean(
+            item.Thumbnail
+        );
 
-    if(thumb){
-        return thumb;
+
+    /*
+       PRIORITAS 1
+    */
+
+    if(thumbnail){
+
+        return thumbnail;
+
     }
 
-    const download =
-        clean(item["Download URL"]);
 
-    if(download){
+    /*
+       PRIORITAS 2
+    */
+
+    const downloadURL =
+        clean(
+            item["Download URL"]
+        );
+
+
+    if(downloadURL){
 
         try{
 
             const url =
-                new URL(download);
+                new URL(
+                    downloadURL
+                );
 
-            return (
-                "https://www.google.com/s2/favicons?domain=" +
-                encodeURIComponent(url.hostname) +
-                "&sz=256"
+
+            const domain =
+                url.hostname
+                    .replace(
+                        /^www\./,
+                        ""
+                    );
+
+
+            if(domain){
+
+                return (
+                    "https://www.google.com/s2/favicons?domain=" +
+                    encodeURIComponent(domain) +
+                    "&sz=256"
+                );
+
+            }
+
+        }catch(error){
+
+            console.warn(
+                "Download URL tidak valid:",
+                downloadURL
             );
 
-        }catch(e){}
+        }
 
     }
 
+
     return "";
+
 }
 
 
@@ -1019,17 +1776,23 @@ function getThumbnail(item){
 ==========================================================
 */
 
-function featured(item){
+function isFeatured(item){
 
     const value =
-        clean(item.Featured).toLowerCase();
+        clean(
+            item.Featured
+        ).toLowerCase();
+
 
     return (
+
         value === "true" ||
         value === "yes" ||
         value === "1" ||
         value === "featured"
+
     );
+
 }
 
 
@@ -1039,21 +1802,159 @@ function featured(item){
 ==========================================================
 */
 
-function published(item){
+function isPublished(item){
 
     const status =
-        clean(item.Status).toLowerCase();
+        clean(
+            item.Status
+        ).toLowerCase();
+
+
+    /*
+       Kalau Status kosong,
+       tetap ditampilkan.
+    */
 
     if(!status){
+
         return true;
+
     }
 
+
     return (
+
         status === "published" ||
         status === "publish" ||
         status === "active" ||
         status === "aktif"
+
     );
+
+}
+
+
+/*
+==========================================================
+ SIZE
+
+Jika Sheet Size tersedia:
+gunakan nilai Sheet.
+
+Jika kosong:
+Software -> estimasi.
+Selain Software -> tidak dipaksa.
+==========================================================
+*/
+
+function getDisplaySize(item){
+
+    const sheetSize =
+        clean(
+            item.Size
+        );
+
+
+    if(sheetSize){
+
+        return {
+            value:sheetSize,
+            estimated:false
+        };
+
+    }
+
+
+    const type =
+        clean(
+            item.Type
+        ).toLowerCase();
+
+
+    if(type === "software"){
+
+        return {
+            value:
+                getEstimatedSoftwareSize(
+                    item.Title
+                ),
+
+            estimated:true
+        };
+
+    }
+
+
+    return {
+        value:"",
+        estimated:false
+    };
+
+}
+
+
+/*
+==========================================================
+ THUMBNAIL HTML
+==========================================================
+*/
+
+function createThumbnailHTML(item){
+
+    const title =
+        escapeHTML(
+            clean(item.Title) ||
+            "AKT Content"
+        );
+
+
+    const thumbnail =
+        getThumbnail(item);
+
+
+    const fallback =
+        getFallbackIcon(item);
+
+
+    if(!thumbnail){
+
+        return `
+
+        <div
+            class="thumbnail-fallback"
+            aria-label="${title}"
+        >
+            ${fallback}
+        </div>
+
+        `;
+
+    }
+
+
+    return `
+
+    <img
+        src="${escapeHTML(thumbnail)}"
+        alt="${title}"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        onerror="
+            this.style.display='none';
+            this.nextElementSibling.style.display='flex';
+        "
+    >
+
+    <div
+        class="thumbnail-fallback"
+        style="display:none"
+        aria-hidden="true"
+    >
+        ${fallback}
+    </div>
+
+    `;
+
 }
 
 
@@ -1066,203 +1967,277 @@ function published(item){
 function createCard(item){
 
     const title =
-        clean(item.Title) || "Untitled";
+        clean(item.Title) ||
+        "Untitled";
+
 
     const description =
         clean(item.Description) ||
         "Konten pilihan dari AKT.";
+
 
     const category =
         clean(item.Category) ||
         clean(item.Type) ||
         "AKT";
 
+
     const version =
         clean(item.Version);
+
 
     const os =
         clean(item.OS);
 
-    const size =
-        clean(item.Size);
 
-    const download =
-        clean(item["Download URL"]);
-
-    const thumbnail =
-        getThumbnail(item);
-
-    const icon =
-        getIcon(item);
+    const downloadURL =
+        clean(
+            item["Download URL"]
+        );
 
 
-    let meta="";
+    const sizeData =
+        getDisplaySize(item);
+
+
+    let metaHTML="";
+
 
     if(version){
-        meta += `
+
+        metaHTML += `
+
         <span class="meta-pill">
-        ${escapeHTML(version)}
-        </span>`;
+            ${escapeHTML(version)}
+        </span>
+
+        `;
+
     }
+
 
     if(os){
-        meta += `
+
+        metaHTML += `
+
         <span class="meta-pill">
-        ${escapeHTML(os)}
-        </span>`;
-    }
+            ${escapeHTML(os)}
+        </span>
 
-    if(size){
-        meta += `
-        <span class="meta-pill">
-        ${escapeHTML(size)}
-        </span>`;
-    }
-
-
-    let imageHTML;
-
-    if(thumbnail){
-
-        imageHTML = `
-        <img
-            src="${escapeHTML(thumbnail)}"
-            alt="${escapeHTML(title)}"
-            loading="lazy"
-            onerror="
-                this.style.display='none';
-                this.nextElementSibling.style.display='flex';
-            "
-        >
-
-        <div
-            class="thumbnail-fallback"
-            style="display:none"
-        >
-            ${icon}
-        </div>
         `;
 
-    }else{
+    }
 
-        imageHTML = `
-        <div class="thumbnail-fallback">
-            ${icon}
-        </div>
+
+    if(sizeData.value){
+
+        metaHTML += `
+
+        <span
+            class="meta-pill ${
+                sizeData.estimated
+                    ? "estimated"
+                    : ""
+            }"
+            ${
+                sizeData.estimated
+                    ? 'title="Estimasi ukuran"'
+                    : ""
+            }
+        >
+            ${escapeHTML(sizeData.value)}
+        </span>
+
         `;
+
     }
 
 
     let featuredHTML="";
 
-    if(featured(item)){
+
+    if(
+        isFeatured(item)
+    ){
 
         featuredHTML=`
+
         <span class="featured-badge">
             ✦ FEATURED
         </span>
+
         `;
+
     }
 
 
-    let downloadHTML;
+    let downloadHTML="";
 
-    if(download){
+
+    if(downloadURL){
 
         downloadHTML=`
+
         <a
             class="card-download"
-            href="${escapeHTML(download)}"
+            href="${escapeHTML(downloadURL)}"
             target="_blank"
             rel="noopener noreferrer"
         >
             ↓ Download
         </a>
+
         `;
 
     }else{
 
         downloadHTML=`
-        <span class="card-download disabled">
+
+        <span
+            class="card-download disabled"
+        >
             Download
         </span>
+
         `;
+
     }
 
 
     return `
+
     <article class="download-card">
+
 
         <div class="card-visual">
 
+
             ${featuredHTML}
 
+
             <div class="thumbnail-wrap">
-                ${imageHTML}
+
+                ${createThumbnailHTML(item)}
+
             </div>
 
+
         </div>
+
 
         <div class="card-content">
 
+
             <span class="card-category">
+
                 ${escapeHTML(category)}
+
             </span>
 
+
             <h3>
+
                 ${escapeHTML(title)}
+
             </h3>
 
+
             <p class="card-description">
+
                 ${escapeHTML(description)}
+
             </p>
 
+
             ${
-                meta
-                ?
-                `<div class="card-meta">${meta}</div>`
-                :
-                ""
+                metaHTML
+                    ?
+                    `
+                    <div class="card-meta">
+
+                        ${metaHTML}
+
+                    </div>
+                    `
+                    :
+                    ""
             }
+
 
             ${downloadHTML}
 
+
         </div>
 
+
     </article>
+
     `;
+
 }
 
 
 /*
 ==========================================================
- LOAD DATA
+ LOAD GOOGLE SHEETS
 ==========================================================
 */
 
 async function loadAKT(){
 
     const grid =
-        document.getElementById("latestGrid");
+        document.getElementById(
+            "latestGrid"
+        );
+
 
     try{
 
+
         /*
-        Kita minta CSV langsung dari Google.
+        Tambahkan cache-buster.
+
+        Tidak mengubah ID Sheet.
         */
+
+        const separator =
+            AKT_SHEET_URL.includes("?")
+                ? "&"
+                : "?";
+
+
+        const requestURL =
+            AKT_SHEET_URL +
+            separator +
+            "_akt=" +
+            Date.now();
+
+
+        console.log(
+            "AKT Sheet URL:",
+            requestURL
+        );
+
 
         const response =
             await fetch(
-                AKT_SHEET_URL,
+                requestURL,
                 {
                     method:"GET",
-                    mode:"cors",
                     cache:"no-store"
                 }
             );
 
 
-        if(!response.ok){
+        console.log(
+            "AKT HTTP status:",
+            response.status
+        );
+
+
+        if(
+            !response.ok
+        ){
 
             throw new Error(
                 "Google Sheets HTTP " +
@@ -1274,12 +2249,6 @@ async function loadAKT(){
 
         const text =
             await response.text();
-
-
-        console.log(
-            "AKT CSV berhasil diterima:",
-            text.substring(0,300)
-        );
 
 
         if(
@@ -1294,11 +2263,36 @@ async function loadAKT(){
         }
 
 
+        /*
+        Mencegah halaman error Google
+        dianggap sebagai CSV.
+        */
+
+        const lowered =
+            text
+                .slice(0,300)
+                .toLowerCase();
+
+
+        if(
+            lowered.includes("<!doctype html") ||
+            lowered.includes("<html")
+        ){
+
+            throw new Error(
+                "Google mengirim halaman HTML, bukan CSV."
+            );
+
+        }
+
+
         const rows =
             parseCSV(text);
 
 
-        if(rows.length < 2){
+        if(
+            rows.length < 2
+        ){
 
             throw new Error(
                 "Header atau isi Google Sheets tidak ditemukan."
@@ -1312,9 +2306,11 @@ async function loadAKT(){
         */
 
         const headers =
-            rows[0].map(
-                h => clean(h)
-            );
+            rows[0]
+                .map(
+                    header =>
+                        clean(header)
+                );
 
 
         console.log(
@@ -1324,101 +2320,126 @@ async function loadAKT(){
 
 
         /*
-        DATA
+        Pastikan Sheet benar.
+        */
+
+        if(
+            !headers.includes("Title")
+        ){
+
+            throw new Error(
+                "Kolom Title tidak ditemukan."
+            );
+
+        }
+
+
+        /*
+        CONVERT ROW -> OBJECT
         */
 
         const data =
             rows
-            .slice(1)
-            .map(row => {
+                .slice(1)
+                .map(row => {
 
-                const item={};
+                    const item={};
 
-                headers.forEach(
-                    (header,index)=>{
 
-                        if(header){
+                    headers.forEach(
+                        (header,index)=>{
 
-                            item[header] =
-                                clean(
-                                    row[index]
-                                );
+                            if(header){
+
+                                item[header] =
+                                    clean(
+                                        row[index]
+                                    );
+
+                            }
 
                         }
+                    );
 
-                    }
+
+                    return item;
+
+                })
+                .filter(
+                    item =>
+                        Object
+                            .values(item)
+                            .some(
+                                value =>
+                                    clean(value) !== ""
+                            )
                 );
-
-                return item;
-
-            })
-            .filter(item =>
-                Object.values(item)
-                    .some(
-                        value =>
-                            clean(value)!==""
-                    )
-            );
 
 
         console.log(
-            "AKT Content:",
-            data
+            "AKT Content loaded:",
+            data.length
         );
 
 
         /*
-        HANYA PUBLISHED
+        PUBLISHED ONLY
         */
 
         const visible =
             data.filter(
                 item =>
-                    published(item)
+                    isPublished(item)
             );
 
 
         /*
-        MAKSIMAL 8
+        LATEST DOWNLOADS
+        Maksimal 8.
         */
 
         const latest =
             visible.slice(0,8);
 
 
-        if(!latest.length){
+        if(
+            !latest.length
+        ){
 
             grid.innerHTML=`
 
             <div class="latest-empty">
 
-                Belum ada konten AKT.
+                <strong>
+                    Belum ada konten yang dapat ditampilkan.
+                </strong>
 
                 <br>
 
-                <small>
-                Data Google Sheets sudah terbaca,
-                tetapi belum ada konten yang dapat ditampilkan.
-                </small>
+                <span>
+                    Google Sheets sudah berhasil dibaca.
+                </span>
 
             </div>
 
             `;
 
             return;
+
         }
 
 
         grid.innerHTML =
             latest
-            .map(
-                item =>
-                    createCard(item)
-            )
-            .join("");
+                .map(
+                    item =>
+                        createCard(item)
+                )
+                .join("");
 
 
     }catch(error){
+
 
         console.error(
             "AKT ERROR:",
@@ -1435,19 +2456,22 @@ async function loadAKT(){
             </strong>
 
             <span>
-                Google Sheets belum dapat dibaca oleh halaman ini.
+                Google Sheets belum dapat dibaca.
             </span>
 
             <br><br>
 
             <small>
-                Cek Console browser jika diperlukan.
+                Detail teknis:
+                ${escapeHTML(error.message)}
             </small>
 
         </div>
 
         `;
+
     }
+
 }
 
 
@@ -1458,40 +2482,62 @@ async function loadAKT(){
 */
 
 document
-.getElementById("heroSearch")
-.addEventListener(
-    "submit",
-    function(event){
+    .getElementById(
+        "heroSearch"
+    )
+    .addEventListener(
+        "submit",
+        function(event){
 
-        event.preventDefault();
 
-        const query =
-            clean(
+            event.preventDefault();
+
+
+            const query =
+                clean(
+                    document
+                        .getElementById(
+                            "heroSearchInput"
+                        )
+                        .value
+                )
+                .toLowerCase();
+
+
+            if(!query){
+
                 document
-                .getElementById("heroSearchInput")
-                .value
-            )
-            .toLowerCase();
+                    .getElementById(
+                        "latest"
+                    )
+                    .scrollIntoView({
+                        behavior:"smooth"
+                    });
+
+                return;
+
+            }
 
 
-        if(
-            query.includes("game") ||
-            query.includes("games") ||
-            query.includes("emulator")
-        ){
+            if(
+                query.includes("game") ||
+                query.includes("games") ||
+                query.includes("emulator")
+            ){
+
+                window.location.href =
+                    "games.html";
+
+                return;
+
+            }
+
 
             window.location.href =
-                "games.html";
+                "software.html";
 
-            return;
         }
-
-
-        window.location.href =
-            "software.html";
-
-    }
-);
+    );
 
 
 /*
@@ -1501,9 +2547,11 @@ document
 */
 
 document
-.getElementById("year")
-.textContent =
-new Date().getFullYear();
+    .getElementById(
+        "year"
+    )
+    .textContent =
+        new Date().getFullYear();
 
 
 /*
