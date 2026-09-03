@@ -1,714 +1,976 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Tools - AKT</title>
-  <meta
-    name="description"
-    content="Kumpulan tools dan utility pilihan untuk pekerjaan, produktivitas, maintenance, networking, dan kebutuhan komputer sehari-hari."
-  >
-
-  <style>
-    :root {
-      --bg: #fcf9ff;
-      --white: #ffffff;
-      --text: #17132d;
-      --muted: #756d8e;
-      --purple: #9a5de5;
-      --purple-dark: #7d43c9;
-      --purple-soft: #f1e8ff;
-      --purple-light: #f8f1ff;
-      --border: #eadff6;
-      --shadow: 0 10px 30px rgba(89, 48, 130, 0.08);
-      --shadow-hover: 0 16px 35px rgba(89, 48, 130, 0.14);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    input,
-    select {
-      font-family: inherit;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-    }
-
-    .nav-container {
-      max-width: 1180px;
-      min-height: 72px;
-      margin: auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--text);
-      white-space: nowrap;
-    }
-
-    .logo-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 14px;
-      font-weight: 800;
-      background: linear-gradient(135deg, #b965e8, #8d55dc);
-      box-shadow: 0 7px 18px rgba(154, 93, 229, 0.25);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    nav a {
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #5e5870;
-      transition: all .2s ease;
-    }
-
-    nav a:hover {
-      color: var(--purple-dark);
-      background: var(--purple-light);
-    }
-
-    nav a.active {
-      color: var(--purple-dark);
-      background: var(--purple-soft);
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      background:
-        radial-gradient(
-          circle at 80% 35%,
-          rgba(207, 163, 247, 0.35),
-          transparent 35%
-        ),
-        linear-gradient(
-          135deg,
-          #fbf5ff 0%,
-          #f7edff 48%,
-          #fff7fc 100%
-        );
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-inner {
-      max-width: 1180px;
-      margin: auto;
-      padding: 58px 20px 62px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 12px;
-      border: 1px solid #e6d4f8;
-      border-radius: 999px;
-      background: rgba(255,255,255,.75);
-      color: var(--purple-dark);
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 64px);
-      line-height: 1.02;
-      letter-spacing: -2px;
-      margin-bottom: 18px;
-      color: #19152f;
-    }
-
-    .hero h1 span {
-      color: var(--purple);
-    }
-
-    .hero p {
-      max-width: 720px;
-      color: #706782;
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    /* =========================
-       MAIN
-    ========================= */
-
-    .container {
-      max-width: 1180px;
-      margin: auto;
-      padding: 34px 20px 70px;
-    }
-
-    /* =========================
-       TOOLBAR
-    ========================= */
-
-    .toolbar {
-      display: flex;
-      gap: 12px;
-      padding: 14px;
-      background: rgba(255,255,255,.96);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      margin-bottom: 42px;
-    }
-
-    .search-box {
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .search-box input,
-    .filter-select {
-      width: 100%;
-      height: 48px;
-      border: 1px solid #dfd4eb;
-      border-radius: 11px;
-      padding: 0 15px;
-      background: white;
-      color: var(--text);
-      outline: none;
-      font-size: 14px;
-      transition: border-color .2s, box-shadow .2s;
-    }
-
-    .search-box input::placeholder {
-      color: #9a91a8;
-    }
-
-    .search-box input:focus,
-    .filter-select:focus {
-      border-color: var(--purple);
-      box-shadow: 0 0 0 3px rgba(154, 93, 229, 0.10);
-    }
-
-    .filter-wrap {
-      width: 190px;
-    }
-
-    /* =========================
-       SECTION
-    ========================= */
-
-    .section {
-      margin-bottom: 48px;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 15px;
-      margin-bottom: 18px;
-    }
-
-    .section-title-left h2 {
-      font-size: 26px;
-      letter-spacing: -.5px;
-      margin-bottom: 4px;
-    }
-
-    .section-title-left p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .count {
-      color: #857b98;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    /* =========================
-       GRID
-    ========================= */
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    /* =========================
-       CARD
-    ========================= */
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      overflow: hidden;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      box-shadow: 0 4px 18px rgba(84, 46, 117, 0.045);
-      transition:
-        transform .22s ease,
-        box-shadow .22s ease,
-        border-color .22s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: #dcc6f2;
-    }
-
-    .thumb-wrap {
-      position: relative;
-      height: 175px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 22px;
-      background:
-        radial-gradient(
-          circle at 50% 45%,
-          #ffffff 0,
-          #f8edff 48%,
-          #f4e7ff 100%
-        );
-      border-bottom: 1px solid #eee2f7;
-    }
-
-    .thumb {
-      width: 105px;
-      height: 105px;
-      object-fit: contain;
-      border-radius: 20px;
-      transition: transform .25s ease;
-    }
-
-    .card:hover .thumb {
-      transform: scale(1.05);
-    }
-
-    .fallback-icon {
-      width: 105px;
-      height: 105px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 22px;
-      background: white;
-      border: 1px solid #e9dbf6;
-      box-shadow: 0 8px 20px rgba(101, 59, 132, 0.08);
-      font-size: 48px;
-    }
-
-    .featured-label {
-      position: absolute;
-      top: 13px;
-      left: 13px;
-      padding: 6px 9px;
-      border-radius: 9px;
-      background: rgba(255,255,255,.92);
-      color: var(--purple-dark);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .2px;
-      border: 1px solid #e9d9f7;
-    }
-
-    .card-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      padding: 17px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-self: flex-start;
-      padding: 5px 9px;
-      border-radius: 8px;
-      background: var(--purple-soft);
-      color: var(--purple-dark);
-      font-size: 10px;
-      font-weight: 800;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
-
-    .card h3 {
-      font-size: 18px;
-      line-height: 1.25;
-      margin-bottom: 8px;
-      color: #1b1731;
-    }
-
-    .description {
-      color: #766d83;
-      font-size: 13px;
-      line-height: 1.65;
-
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-
-      margin-bottom: 14px;
-    }
-
-    .meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-
-      padding: 9px 0;
-      border-top: 1px solid #f1ebf5;
-
-      color: #81778d;
-      font-size: 10px;
-    }
-
-    .meta span {
-      min-width: 0;
-    }
-
-    .meta span:first-child {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .download-btn {
-      width: 100%;
-      display: block;
-      text-align: center;
-      margin-top: 12px;
-      padding: 11px 13px;
-      border-radius: 10px;
-      background: linear-gradient(
-        135deg,
-        #9d5be4,
-        #b66ce7
-      );
-      color: white;
-      font-size: 12px;
-      font-weight: 800;
-      transition: all .2s ease;
-      box-shadow: 0 7px 17px rgba(154, 93, 229, .18);
-    }
-
-    .download-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(154, 93, 229, .27);
-    }
-
-    .download-disabled {
-      background: #eee9f2;
-      color: #9a91a2;
-      box-shadow: none;
-      cursor: default;
-    }
-
-    /* =========================
-       STATES
-    ========================= */
-
-    .state-box {
-      grid-column: 1 / -1;
-      min-height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px;
-      background: white;
-      border: 1px dashed #dfd0ed;
-      border-radius: 17px;
-    }
-
-    .state-inner h3 {
-      font-size: 17px;
-      margin-bottom: 7px;
-      color: #5e5270;
-    }
-
-    .state-inner p {
-      font-size: 13px;
-      color: #92879f;
-    }
-
-    .error-box h3 {
-      color: #b44d65;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      border-top: 1px solid var(--border);
-      background: #faf6ff;
-      padding: 27px 20px;
-      color: #857a94;
-      font-size: 13px;
-    }
-
-    .footer-inner {
-      max-width: 1180px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer-brand {
-      color: var(--purple-dark);
-      font-weight: 800;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 1050px) {
-      .grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 800px) {
-      .nav-container {
-        min-height: auto;
-        padding-top: 13px;
-        padding-bottom: 13px;
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .logo {
-        justify-content: center;
-      }
-
-      nav {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .toolbar {
-        flex-direction: column;
-      }
-
-      .filter-wrap {
-        width: 100%;
-      }
-
-      .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero-inner {
-        padding-top: 45px;
-        padding-bottom: 48px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      nav {
-        overflow-x: auto;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        padding-bottom: 3px;
-      }
-
-      nav a {
-        white-space: nowrap;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .thumb-wrap {
-        height: 190px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AKT — Tools</title>
+
+<meta
+  name="description"
+  content="Kumpulan tools dan utility pilihan AKT untuk pekerjaan, produktivitas, maintenance, networking, dan kebutuhan komputer sehari-hari."
+>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background:#fcfaff;
+  color:#292238;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid #eee5f5;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+
+  padding:13px 24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:9px;
+
+  font-size:1.3rem;
+  font-weight:900;
+}
+
+.logo-mark{
+  width:34px;
+  height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:10px;
+
+  color:white;
+
+  font-size:.78rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      #b86df1,
+      #e878ca
+    );
+
+  box-shadow:
+    0 8px 20px
+    rgba(181,104,242,.25);
+}
+
+.logo-text{
+  background:
+    linear-gradient(
+      135deg,
+      #332442,
+      #965bd5
+    );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+
+  color:transparent;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:25px;
+
+  color:#6e6577;
+
+  font-size:.77rem;
+  font-weight:700;
+}
+
+nav a:hover{
+  color:#8755cf;
+}
+
+nav a.active{
+  color:#8051ca;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(237,184,244,.34),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 5% 90%,
+      rgba(190,165,255,.22),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #fcf7ff,
+      #f8efff 55%,
+      #fff3fb
+    );
+}
+
+.hero-inner{
+  max-width:1200px;
+
+  min-height:340px;
+
+  margin:auto;
+
+  padding:60px 24px;
+
+  display:flex;
+  align-items:center;
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.hero-badge{
+  display:inline-flex;
+
+  padding:7px 13px;
+
+  border-radius:999px;
+
+  background:white;
+
+  border:1px solid #e8daf5;
+
+  color:#8051ca;
+
+  font-size:.72rem;
+  font-weight:800;
+
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(3rem,6vw,5rem);
+
+  line-height:.98;
+
+  letter-spacing:-3px;
+
+  color:#292238;
+
+  margin-bottom:20px;
+}
+
+.gradient-text{
+  display:block;
+
+  background:
+    linear-gradient(
+      135deg,
+      #965bd5,
+      #c66ad9
+    );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+
+  color:transparent;
+}
+
+.hero p{
+  max-width:760px;
+
+  color:#766e80;
+
+  font-size:1rem;
+
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.container{
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:
+    45px 24px
+    80px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.toolbar{
+  display:grid;
+
+  grid-template-columns:
+    1fr
+    240px
+    240px;
+
+  gap:14px;
+
+  padding:14px;
+
+  background:white;
+
+  border:1px solid #eee5f5;
+
+  border-radius:18px;
+
+  box-shadow:
+    0 12px 35px
+    rgba(75,48,105,.07);
+
+  margin-bottom:55px;
+}
+
+.search-box{
+  position:relative;
+}
+
+.search-box input,
+.filter-select{
+  width:100%;
+
+  height:58px;
+
+  padding:
+    0 18px;
+
+  border:
+    1px solid #ded5e8;
+
+  border-radius:13px;
+
+  background:#fff;
+
+  color:#332942;
+
+  font-size:.92rem;
+
+  outline:none;
+
+  transition:.2s;
+}
+
+.search-box input:focus,
+.filter-select:focus{
+  border-color:#b783e3;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(183,131,227,.12);
+}
+
+.filter-select{
+  cursor:pointer;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section{
+  margin-bottom:65px;
+}
+
+.section-title{
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  margin-bottom:24px;
+}
+
+.section-title h2{
+  font-size:1.65rem;
+
+  letter-spacing:-.8px;
+
+  color:#292238;
+}
+
+.count{
+  flex-shrink:0;
+
+  padding:
+    8px 13px;
+
+  border-radius:999px;
+
+  background:#f2e8ff;
+
+  color:#8051ca;
+
+  font-size:.75rem;
+
+  font-weight:800;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:20px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card{
+  overflow:hidden;
+
+  background:white;
+
+  border:
+    1px solid #eee5f5;
+
+  border-radius:18px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(75,48,105,.055);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 16px 35px
+    rgba(75,48,105,.12);
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.card-image{
+  position:relative;
+
+  height:185px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0e4ff,
+      #fce6f5
+    );
+}
+
+.card-image-inner{
+  width:96px;
+  height:96px;
+
+  border-radius:25px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    rgba(255,255,255,.75);
+
+  box-shadow:
+    0 10px 30px
+    rgba(100,60,130,.08);
+
+  overflow:hidden;
+}
+
+.card-image-inner img{
+  width:68px;
+  height:68px;
+
+  object-fit:contain;
+
+  display:block;
+}
+
+.fallback-icon{
+  font-size:3.5rem;
+
+  line-height:1;
+}
+
+
+/* =========================================================
+   FEATURED BADGE
+========================================================= */
+
+.featured-badge{
+  position:absolute;
+
+  top:14px;
+  left:14px;
+
+  padding:
+    8px 11px;
+
+  border-radius:10px;
+
+  background:
+    rgba(255,255,255,.94);
+
+  color:#8a56d0;
+
+  font-size:.68rem;
+
+  font-weight:900;
+
+  box-shadow:
+    0 5px 15px
+    rgba(70,40,90,.08);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.card-content{
+  padding:20px;
+
+  display:flex;
+  flex-direction:column;
+
+  flex:1;
+}
+
+.card-category{
+  align-self:flex-start;
+
+  padding:
+    6px 9px;
+
+  border-radius:8px;
+
+  background:#f2e8ff;
+
+  color:#8051ca;
+
+  font-size:.63rem;
+
+  font-weight:900;
+
+  text-transform:uppercase;
+
+  margin-bottom:12px;
+}
+
+.card h3{
+  font-size:1.05rem;
+
+  line-height:1.35;
+
+  color:#292238;
+
+  margin-bottom:9px;
+}
+
+.card-description{
+  color:#766e80;
+
+  font-size:.78rem;
+
+  line-height:1.65;
+
+  margin-bottom:15px;
+}
+
+.meta{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:6px;
+
+  margin-top:auto;
+
+  margin-bottom:15px;
+}
+
+.meta span{
+  padding:
+    5px 8px;
+
+  border:
+    1px solid #eee5f5;
+
+  border-radius:7px;
+
+  color:#766e80;
+
+  background:#fcfaff;
+
+  font-size:.62rem;
+}
+
+.download-button{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  width:100%;
+
+  min-height:40px;
+
+  border-radius:10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #9a5ddd,
+      #c46edb
+    );
+
+  color:white;
+
+  font-size:.75rem;
+
+  font-weight:800;
+
+  transition:.2s;
+}
+
+.download-button:hover{
+  transform:translateY(-1px);
+
+  box-shadow:
+    0 8px 18px
+    rgba(140,80,200,.22);
+}
+
+.download-button.disabled{
+  background:#eee8f2;
+
+  color:#9a91a2;
+
+  cursor:not-allowed;
+}
+
+
+/* =========================================================
+   STATES
+========================================================= */
+
+.loading,
+.empty,
+.error{
+  grid-column:1 / -1;
+
+  min-height:150px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-direction:column;
+
+  text-align:center;
+
+  padding:30px;
+
+  border:
+    1px dashed #dfd1eb;
+
+  border-radius:16px;
+
+  background:white;
+
+  color:#766e80;
+}
+
+.error strong{
+  color:#9a5060;
+
+  margin-bottom:7px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  background:#292238;
+
+  color:#eeeaf4;
+
+  padding:
+    30px 24px;
+}
+
+.footer-inner{
+  max-width:1200px;
+
+  margin:auto;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  color:#aaa2b5;
+
+  font-size:.75rem;
+}
+
+.footer-logo{
+  color:#b86df1;
+
+  font-weight:900;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px){
+
+  .grid{
+    grid-template-columns:
+      repeat(3,1fr);
+  }
+
+  .toolbar{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .search-box{
+    grid-column:1 / -1;
+  }
+}
+
+@media(max-width:760px){
+
+  nav{
+    gap:12px;
+
+    font-size:.7rem;
+  }
+
+  .hero-inner{
+    padding:
+      50px 20px;
+  }
+
+  .container{
+    padding:
+      35px 18px
+      60px;
+  }
+
+  .grid{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .toolbar{
+    grid-template-columns:1fr;
+  }
+
+  .search-box{
+    grid-column:auto;
+  }
+
+  .section-title h2{
+    font-size:1.4rem;
+  }
+}
+
+@media(max-width:520px){
+
+  .nav-inner{
+    padding:
+      11px 16px;
+  }
+
+  .logo-text{
+    display:none;
+  }
+
+  nav a:nth-child(4){
+    display:none;
+  }
+
+  .hero h1{
+    font-size:3rem;
+
+    letter-spacing:-2px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-title{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+}
+
+</style>
 </head>
+
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+
+<!-- =======================================================
+     NAVIGATION
+======================================================== -->
 
 <header>
-  <div class="nav-container">
 
-    <a href="index.html" class="logo">
-      <span class="logo-mark">AK</span>
-      <span>AKT</span>
+  <div class="nav-inner">
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+
+      <span class="logo-mark">
+        AK
+      </span>
+
+      <span class="logo-text">
+        AKT
+      </span>
+
     </a>
 
+
     <nav>
-      <a href="index.html">Home</a>
-      <a href="software.html">Software</a>
-      <a href="games.html">Games</a>
-      <a href="tools.html" class="active">Tools</a>
-      <a href="android.html">Android</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="software.html">
+        Software
+      </a>
+
+      <a href="games.html">
+        Games
+      </a>
+
+      <a
+        href="tools.html"
+        class="active"
+      >
+        Tools
+      </a>
+
+      <a href="android.html">
+        Android
+      </a>
+
     </nav>
 
   </div>
+
 </header>
 
 
-<!-- =========================
+<!-- =======================================================
      HERO
-========================= -->
+======================================================== -->
 
 <section class="hero">
+
   <div class="hero-inner">
 
-    <div class="hero-badge">
-      ✦ AKT Tools Collection
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        ✦ AKT Tools
+      </div>
+
+      <h1>
+        Tools.
+        <span class="gradient-text">
+          Lebih Praktis.
+        </span>
+      </h1>
+
+      <p>
+        Kumpulan tools dan utility pilihan untuk membantu
+        pekerjaan, produktivitas, maintenance, networking,
+        dan kebutuhan komputer sehari-hari.
+      </p>
+
     </div>
 
-    <h1>
-      Tools <span>Terbaik.</span>
-    </h1>
-
-    <p>
-      Kumpulan tools dan utility pilihan untuk membantu pekerjaan,
-      produktivitas, maintenance, networking, keamanan, dan berbagai
-      kebutuhan komputer sehari-hari.
-    </p>
-
   </div>
+
 </section>
 
 
-<!-- =========================
+<!-- =======================================================
      MAIN
-========================= -->
+======================================================== -->
 
 <main class="container">
+
 
   <!-- FILTER -->
 
   <div class="toolbar">
 
     <div class="search-box">
+
       <input
         type="search"
         id="searchInput"
         placeholder="Cari tools..."
         autocomplete="off"
-        aria-label="Cari tools"
       >
+
     </div>
 
-    <div class="filter-wrap">
-      <select
-        id="osFilter"
-        class="filter-select"
-        aria-label="Filter sistem operasi"
-      >
-        <option value="">Semua OS</option>
-      </select>
-    </div>
 
-    <div class="filter-wrap">
-      <select
-        id="sortFilter"
-        class="filter-select"
-        aria-label="Urutkan tools"
-      >
-        <option value="latest">Terbaru</option>
-        <option value="name">Nama A-Z</option>
-        <option value="popular">Paling Banyak Dilihat</option>
-      </select>
-    </div>
+    <select
+      id="osFilter"
+      class="filter-select"
+    >
+
+      <option value="">
+        Semua OS
+      </option>
+
+    </select>
+
+
+    <select
+      id="sortFilter"
+      class="filter-select"
+    >
+
+      <option value="latest">
+        Terbaru
+      </option>
+
+      <option value="name">
+        Nama A-Z
+      </option>
+
+      <option value="popular">
+        Paling Banyak Dilihat
+      </option>
+
+    </select>
 
   </div>
 
 
-  <!-- FEATURED -->
+  <!-- =====================================================
+       FEATURED
+  ====================================================== -->
 
   <section class="section">
 
     <div class="section-title">
 
-      <div class="section-title-left">
-        <h2>Featured Tools</h2>
-        <p>Tools pilihan yang direkomendasikan di AKT.</p>
-      </div>
+      <h2>
+        Featured Tools
+      </h2>
 
       <span
         class="count"
@@ -719,16 +981,14 @@
 
     </div>
 
+
     <div
       id="featuredGrid"
       class="grid"
     >
 
-      <div class="state-box">
-        <div class="state-inner">
-          <h3>Memuat tools...</h3>
-          <p>Mohon tunggu sebentar.</p>
-        </div>
+      <div class="loading">
+        Memuat featured tools...
       </div>
 
     </div>
@@ -736,16 +996,17 @@
   </section>
 
 
-  <!-- ALL TOOLS -->
+  <!-- =====================================================
+       ALL OTHER TOOLS
+  ====================================================== -->
 
   <section class="section">
 
     <div class="section-title">
 
-      <div class="section-title-left">
-        <h2>All Tools</h2>
-        <p>Semua tools yang tersedia di AKT.</p>
-      </div>
+      <h2>
+        All Tools
+      </h2>
 
       <span
         class="count"
@@ -756,42 +1017,51 @@
 
     </div>
 
+
     <div
       id="toolsGrid"
       class="grid"
     >
 
-      <div class="state-box">
-        <div class="state-inner">
-          <h3>Memuat tools...</h3>
-          <p>Mohon tunggu sebentar.</p>
-        </div>
+      <div class="loading">
+        Memuat semua tools...
       </div>
 
     </div>
 
   </section>
 
+
 </main>
 
 
-<!-- =========================
+<!-- =======================================================
      FOOTER
-========================= -->
+======================================================== -->
 
 <footer>
+
   <div class="footer-inner">
 
     <div>
-      <span class="footer-brand">AKT</span>
-      — Downloads & Knowledge
+
+      <span class="footer-logo">
+        AKT
+      </span>
+
+      <span>
+        — Downloads & Knowledge
+      </span>
+
     </div>
 
+
     <div>
-      © 2026 AKT
+      © <span id="year"></span> AKT
     </div>
 
   </div>
+
 </footer>
 
 
@@ -799,22 +1069,15 @@
 
 /* =========================================================
    GOOGLE SHEETS CSV
-   ========================================================= */
+   TETAP METODE CSV
+========================================================= */
 
 const CSV_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmhKZ9XD_fsfwXXAhpzIv-LZGER5UyJ-RI1Lgj3P6viDWqKiuED4k9tNu6qRdp1uueO1XGka22k20m/pub?gid=0&single=true&output=csv";
 
 
-/* =========================================================
-   GLOBAL DATA
-   ========================================================= */
-
 let allTools = [];
 
-
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
 
 const searchInput =
   document.getElementById("searchInput");
@@ -838,105 +1101,153 @@ const featuredCount =
   document.getElementById("featuredCount");
 
 
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+
 /* =========================================================
    CSV PARSER
-   ========================================================= */
+========================================================= */
 
-function parseCSV(text) {
+function parseCSV(text){
 
   const rows = [];
 
   let row = [];
   let value = "";
+
   let insideQuotes = false;
 
-  for (let i = 0; i < text.length; i++) {
 
-    const char = text[i];
-    const next = text[i + 1];
+  for(
+    let i = 0;
+    i < text.length;
+    i++
+  ){
 
-    if (
+    const char =
+      text[i];
+
+    const next =
+      text[i + 1];
+
+
+    if(
       char === '"' &&
       insideQuotes &&
       next === '"'
-    ) {
+    ){
+
       value += '"';
+
       i++;
+
       continue;
     }
 
-    if (char === '"') {
-      insideQuotes = !insideQuotes;
+
+    if(char === '"'){
+
+      insideQuotes =
+        !insideQuotes;
+
       continue;
     }
 
-    if (
+
+    if(
       char === "," &&
       !insideQuotes
-    ) {
+    ){
+
       row.push(value);
+
       value = "";
+
       continue;
     }
 
-    if (
-      (char === "\n" || char === "\r") &&
-      !insideQuotes
-    ) {
 
-      if (
+    if(
+      (
+        char === "\n" ||
+        char === "\r"
+      ) &&
+      !insideQuotes
+    ){
+
+      if(
         char === "\r" &&
         next === "\n"
-      ) {
+      ){
+
         i++;
       }
 
+
       row.push(value);
+
       value = "";
 
-      if (
+
+      if(
         row.some(
-          cell => cell.trim() !== ""
+          cell =>
+            String(cell).trim() !== ""
         )
-      ) {
+      ){
+
         rows.push(row);
       }
+
 
       row = [];
 
       continue;
     }
 
+
     value += char;
+
   }
 
-  if (
+
+  if(
     value !== "" ||
     row.length > 0
-  ) {
+  ){
 
     row.push(value);
 
-    if (
+
+    if(
       row.some(
-        cell => cell.trim() !== ""
+        cell =>
+          String(cell).trim() !== ""
       )
-    ) {
+    ){
+
       rows.push(row);
     }
+
   }
 
-  if (!rows.length) {
+
+  if(!rows.length){
+
     return [];
   }
 
+
   const headers =
-    rows[0].map(header =>
-      header
-        .replace(/^\uFEFF/, "")
-        .trim()
-        .toLowerCase()
+    rows[0].map(
+      header =>
+        String(header)
+          .replace(/^\uFEFF/, "")
+          .trim()
+          .toLowerCase()
     );
+
 
   return rows
     .slice(1)
@@ -944,376 +1255,504 @@ function parseCSV(text) {
 
       const item = {};
 
+
       headers.forEach(
-        (header, index) => {
+        (header,index) => {
 
           item[header] =
-            (columns[index] || "")
-              .trim();
+            String(
+              columns[index] || ""
+            ).trim();
 
         }
       );
 
+
       return item;
 
-    });
+    })
+    .filter(item =>
+      Object.values(item)
+        .some(
+          value =>
+            String(value).trim() !== ""
+        )
+    );
 
 }
 
 
 /* =========================================================
-   HELPERS
-   ========================================================= */
+   HELPER
+========================================================= */
 
-function escapeHTML(value) {
+function escapeHTML(value){
 
-  return String(value || "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
 
-function isTrue(value) {
+function isTrue(value){
 
-  return [
-    "true",
-    "1",
-    "yes",
-    "ya"
-  ].includes(
-    String(value || "")
+  const normalized =
+    String(value ?? "")
       .trim()
-      .toLowerCase()
+      .toLowerCase();
+
+
+  return (
+    normalized === "true" ||
+    normalized === "yes" ||
+    normalized === "1" ||
+    normalized === "featured"
+  );
+
+}
+
+
+function isPublished(item){
+
+  const status =
+    String(item.status ?? "")
+      .trim()
+      .toLowerCase();
+
+
+  if(!status){
+
+    return true;
+  }
+
+
+  return (
+    status === "published" ||
+    status === "publish" ||
+    status === "active" ||
+    status === "aktif" ||
+    status === "true"
   );
 
 }
 
 
 /* =========================================================
-   DOWNLOAD URL NORMALIZER
-   ========================================================= */
+   THUMBNAIL
+========================================================= */
 
-function normalizeURL(value) {
+function getThumbnail(item){
 
-  let url = String(value || "").trim();
+  const thumbnail =
+    String(
+      item.thumbnail || ""
+    ).trim();
 
-  if (!url) {
-    return "";
+
+  if(thumbnail){
+
+    return thumbnail;
   }
 
-  /*
-   * Mendukung format:
-   * https://example.com/file
-   *
-   * maupun:
-   * [Download](https://example.com/file)
-   */
 
-  const markdownMatch =
-    url.match(
-      /\[[^\]]*\]\((https?:\/\/[^)]+)\)/
-    );
+  const download =
+    String(
+      item["download url"] || ""
+    ).trim();
 
-  if (markdownMatch) {
-    return markdownMatch[1];
+
+  if(download){
+
+    try{
+
+      const url =
+        new URL(download);
+
+
+      return (
+        "https://www.google.com/s2/favicons" +
+        "?domain=" +
+        encodeURIComponent(
+          url.hostname
+        ) +
+        "&sz=256"
+      );
+
+    }catch(error){
+
+      console.warn(
+        "Thumbnail URL error:",
+        error
+      );
+
+    }
+
   }
 
-  /*
-   * Kalau ada teks tambahan sebelum URL,
-   * ambil URL HTTPS pertama.
-   */
-
-  const urlMatch =
-    url.match(
-      /https?:\/\/[^\s<>"')]+/
-    );
-
-  if (urlMatch) {
-    return urlMatch[0];
-  }
 
   return "";
 }
 
 
 /* =========================================================
-   FILE SIZE
-   ========================================================= */
+   FALLBACK ICON
+========================================================= */
 
-function getEstimatedSize(item) {
+function getFallbackIcon(item){
 
-  const actual =
-    String(item["file size"] || "")
-      .trim();
+  const combined = (
 
-  if (actual) {
-    return actual;
+    String(
+      item.title || ""
+    ) +
+
+    " " +
+
+    String(
+      item.category || ""
+    ) +
+
+    " " +
+
+    String(
+      item.type || ""
+    )
+
+  ).toLowerCase();
+
+
+  if(
+    combined.includes("network") ||
+    combined.includes("internet")
+  ){
+
+    return "🌐";
   }
 
-  const title =
-    String(item.title || "")
-      .toLowerCase();
 
-  const category =
-    String(item.category || "")
-      .toLowerCase();
+  if(
+    combined.includes("disk") ||
+    combined.includes("storage")
+  ){
 
-  /*
-   * Estimasi berdasarkan jenis tool.
-   * Hanya digunakan jika kolom File Size kosong.
-   */
-
-  if (
-    title.includes("visual studio") ||
-    title.includes("android studio") ||
-    title.includes("docker") ||
-    title.includes("blender")
-  ) {
-    return "±500 MB";
+    return "💾";
   }
 
-  if (
-    title.includes("wireshark") ||
-    title.includes("xampp") ||
-    title.includes("virtualbox") ||
-    title.includes("vmware")
-  ) {
-    return "±150 MB";
+
+  if(
+    combined.includes("backup")
+  ){
+
+    return "🗄️";
   }
 
-  if (
-    category.includes("network") ||
-    title.includes("putty") ||
-    title.includes("winscp") ||
-    title.includes("filezilla")
-  ) {
-    return "±30 MB";
+
+  if(
+    combined.includes("security") ||
+    combined.includes("password")
+  ){
+
+    return "🔐";
   }
 
-  if (
-    category.includes("utility") ||
-    category.includes("system")
-  ) {
-    return "±50 MB";
+
+  if(
+    combined.includes("developer") ||
+    combined.includes("development") ||
+    combined.includes("code")
+  ){
+
+    return "💻";
   }
 
-  return "±40 MB";
+
+  if(
+    combined.includes("compression") ||
+    combined.includes("archive")
+  ){
+
+    return "🗜️";
+  }
+
+
+  if(
+    combined.includes("system")
+  ){
+
+    return "⚙️";
+  }
+
+
+  return "🧰";
+
 }
 
 
 /* =========================================================
-   THUMBNAIL
-   ========================================================= */
+   SIZE
+========================================================= */
 
-function getThumbnail(item) {
+function getSize(item){
 
-  const thumbnail =
-    String(item.thumbnail || "")
-      .trim();
+  const size =
+    String(
+      item["file size"] || ""
+    ).trim();
+
+
+  if(size){
+
+    return size;
+  }
+
+
+  return "~100 MB";
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+function createCard(item, showFeaturedBadge = false){
 
   const title =
-    escapeHTML(
-      item.title || "Tool"
-    );
+    item.title ||
+    "Untitled Tool";
 
-  if (
-    thumbnail &&
-    (
-      thumbnail.startsWith("https://") ||
-      thumbnail.startsWith("http://")
-    )
-  ) {
 
-    return `
+  const category =
+    item.category ||
+    "Tools";
+
+
+  const description =
+    item.description ||
+    "Tool pilihan untuk membantu kebutuhan sehari-hari.";
+
+
+  const version =
+    item.version || "";
+
+
+  const os =
+    item.os || "";
+
+
+  const size =
+    getSize(item);
+
+
+  const download =
+    item["download url"] || "";
+
+
+  const thumbnail =
+    getThumbnail(item);
+
+
+  const fallback =
+    getFallbackIcon(item);
+
+
+  let meta = "";
+
+
+  if(version){
+
+    meta += `
+      <span>
+        ${escapeHTML(version)}
+      </span>
+    `;
+
+  }
+
+
+  if(os){
+
+    meta += `
+      <span>
+        ${escapeHTML(os)}
+      </span>
+    `;
+
+  }
+
+
+  if(size){
+
+    meta += `
+      <span>
+        ${escapeHTML(size)}
+      </span>
+    `;
+
+  }
+
+
+  let imageHTML;
+
+
+  if(thumbnail){
+
+    imageHTML = `
+
       <img
-        class="thumb"
         src="${escapeHTML(thumbnail)}"
-        alt="${title}"
+        alt="${escapeHTML(title)}"
         loading="lazy"
+        referrerpolicy="no-referrer"
         onerror="
           this.style.display='none';
           this.nextElementSibling.style.display='flex';
         "
       >
 
-      <div
+      <span
         class="fallback-icon"
-        style="display:none;"
-        aria-label="Tool"
+        style="display:none"
       >
-        🔧
-      </div>
+        ${fallback}
+      </span>
+
+    `;
+
+  }else{
+
+    imageHTML = `
+
+      <span class="fallback-icon">
+        ${fallback}
+      </span>
+
     `;
 
   }
 
-  return `
-    <div
-      class="fallback-icon"
-      aria-label="Tool"
-    >
-      🔧
-    </div>
-  `;
-}
-
-
-/* =========================================================
-   CREATE CARD
-   ========================================================= */
-
-function createCard(item, isFeatured = false) {
-
-  const title =
-    escapeHTML(
-      item.title || "Untitled Tool"
-    );
-
-  const description =
-    escapeHTML(
-      item.description ||
-      "Tool dan utility untuk membantu kebutuhan komputer."
-    );
-
-  const category =
-    escapeHTML(
-      item.category || "Tool"
-    );
-
-  const version =
-    escapeHTML(
-      item.version || "Latest"
-    );
-
-  const fileSize =
-    escapeHTML(
-      getEstimatedSize(item)
-    );
-
-  const os =
-    escapeHTML(
-      item.os || "Windows"
-    );
-
-  const developer =
-    escapeHTML(
-      item.developer || "Developer"
-    );
-
-  const downloadURL =
-    normalizeURL(
-      item["download url"]
-    );
 
   const featuredHTML =
-    isFeatured
+    showFeaturedBadge
       ? `
-        <div class="featured-label">
+        <span class="featured-badge">
           ✦ FEATURED
-        </div>
+        </span>
       `
       : "";
 
+
   const downloadHTML =
-    downloadURL
+    download
       ? `
         <a
-          class="download-btn"
-          href="${escapeHTML(downloadURL)}"
+          class="download-button"
+          href="${escapeHTML(download)}"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Download
+          ↓ Download
         </a>
       `
       : `
-        <span class="download-btn download-disabled">
+        <span class="download-button disabled">
           Download
         </span>
       `;
 
+
   return `
+
     <article class="card">
 
-      <div class="thumb-wrap">
+      <div class="card-image">
 
         ${featuredHTML}
 
-        ${getThumbnail(item)}
+        <div class="card-image-inner">
+
+          ${imageHTML}
+
+        </div>
 
       </div>
 
-      <div class="card-body">
 
-        <span class="badge">
-          ${category}
+      <div class="card-content">
+
+        <span class="card-category">
+          ${escapeHTML(category)}
         </span>
 
+
         <h3>
-          ${title}
+          ${escapeHTML(title)}
         </h3>
 
-        <p class="description">
-          ${description}
+
+        <p class="card-description">
+          ${escapeHTML(description)}
         </p>
 
-        <div class="meta">
-          <span>
-            ${version}
-          </span>
 
-          <span>
-            ${fileSize}
-          </span>
-        </div>
+        ${
+          meta
+            ? `
+              <div class="meta">
+                ${meta}
+              </div>
+            `
+            : ""
+        }
 
-        <div class="meta">
-          <span title="${os}">
-            ${os}
-          </span>
-
-          <span title="${developer}">
-            ${developer}
-          </span>
-        </div>
 
         ${downloadHTML}
 
       </div>
 
     </article>
+
   `;
+
 }
 
 
 /* =========================================================
    OS FILTER
-   ========================================================= */
+========================================================= */
 
-function populateOSFilter(items) {
+function populateOSFilter(items){
 
-  const osSet = new Set();
+  const osSet =
+    new Set();
+
 
   items.forEach(item => {
 
-    const os =
-      String(item.os || "");
+    const value =
+      String(
+        item.os || ""
+      );
 
-    os
+
+    value
       .split(",")
-      .map(value =>
-        value.trim()
+      .map(
+        os =>
+          os.trim()
       )
       .filter(Boolean)
-      .forEach(value =>
-        osSet.add(value)
+      .forEach(
+        os =>
+          osSet.add(os)
       );
 
   });
+
 
   osFilter.innerHTML = `
     <option value="">
@@ -1321,26 +1760,28 @@ function populateOSFilter(items) {
     </option>
   `;
 
+
   [...osSet]
-    .sort(
-      (a, b) =>
-        a.localeCompare(
-          b,
-          "id",
-          {
-            sensitivity: "base"
-          }
-        )
-    )
+    .sort()
     .forEach(os => {
 
       const option =
-        document.createElement("option");
+        document.createElement(
+          "option"
+        );
 
-      option.value = os;
-      option.textContent = os;
 
-      osFilter.appendChild(option);
+      option.value =
+        os;
+
+
+      option.textContent =
+        os;
+
+
+      osFilter.appendChild(
+        option
+      );
 
     });
 
@@ -1349,46 +1790,54 @@ function populateOSFilter(items) {
 
 /* =========================================================
    SORT
-   ========================================================= */
+========================================================= */
 
-function sortItems(items) {
+function sortItems(items){
 
   const sorted =
     [...items];
 
+
   const mode =
     sortFilter.value;
 
-  if (mode === "name") {
+
+  if(mode === "name"){
 
     sorted.sort(
-      (a, b) =>
+      (a,b) =>
         String(a.title || "")
           .localeCompare(
             String(b.title || ""),
             "id",
             {
-              sensitivity: "base"
+              sensitivity:"base"
             }
           )
     );
 
   }
 
-  else if (mode === "popular") {
+
+  if(mode === "popular"){
 
     sorted.sort(
-      (a, b) =>
-        Number(b.views || 0) -
-        Number(a.views || 0)
+      (a,b) =>
+        Number(
+          b.views || 0
+        ) -
+        Number(
+          a.views || 0
+        )
     );
 
   }
 
-  else {
+
+  if(mode === "latest"){
 
     sorted.sort(
-      (a, b) => {
+      (a,b) => {
 
         const dateA =
           new Date(
@@ -1397,12 +1846,14 @@ function sortItems(items) {
             "1970-01-01"
           );
 
+
         const dateB =
           new Date(
             b["updated at"] ||
             b["created at"] ||
             "1970-01-01"
           );
+
 
         return dateB - dateA;
 
@@ -1411,37 +1862,57 @@ function sortItems(items) {
 
   }
 
+
   return sorted;
 
 }
 
 
 /* =========================================================
-   FILTER
-   ========================================================= */
+   RENDER
+   =========================================================
+   
+   PENTING:
+   
+   1. Ambil maksimal 5 featured.
+   2. Simpan ID/index featured.
+   3. Latest hanya berisi item YANG BUKAN featured.
+   4. Jadi tidak ada duplikat.
+========================================================= */
 
-function getFilteredTools() {
+function render(){
 
   const keyword =
     searchInput.value
       .trim()
       .toLowerCase();
 
+
   const selectedOS =
     osFilter.value;
+
 
   let filtered =
     allTools.filter(item => {
 
       const searchableText = [
+
         item.title,
+
         item.description,
+
         item.category,
+
         item.developer,
-        item.os
+
+        item.os,
+
+        item.type
+
       ]
         .join(" ")
         .toLowerCase();
+
 
       const matchSearch =
         !keyword ||
@@ -1449,18 +1920,25 @@ function getFilteredTools() {
           keyword
         );
 
+
       const itemOS =
-        String(item.os || "")
-          .split(",")
-          .map(value =>
+        String(
+          item.os || ""
+        )
+        .split(",")
+        .map(
+          value =>
             value.trim()
-          );
+        )
+        .filter(Boolean);
+
 
       const matchOS =
         !selectedOS ||
         itemOS.includes(
           selectedOS
         );
+
 
       return (
         matchSearch &&
@@ -1469,84 +1947,142 @@ function getFilteredTools() {
 
     });
 
-  return sortItems(filtered);
 
-}
+  filtered =
+    sortItems(filtered);
 
 
-/* =========================================================
-   RENDER
-   ========================================================= */
-
-function render() {
-
-  const filtered =
-    getFilteredTools();
+  /*
+   * =======================================================
+   * FEATURED = MAKSIMAL 5
+   * =======================================================
+   */
 
   const featured =
-    filtered.filter(item =>
-      isTrue(item.featured)
+    filtered
+      .filter(
+        item =>
+          isTrue(item.featured)
+      )
+      .slice(0,5);
+
+
+  /*
+   * =======================================================
+   * BUAT SET IDENTITAS FEATURED
+   *
+   * Kita gunakan referensi object langsung.
+   * Ini memastikan 5 item tersebut tidak muncul lagi
+   * di bagian All Tools.
+   * =======================================================
+   */
+
+  const featuredSet =
+    new Set(featured);
+
+
+  /*
+   * =======================================================
+   * ALL TOOLS = SEMUA SELAIN FEATURED
+   * =======================================================
+   */
+
+  const remaining =
+    filtered.filter(
+      item =>
+        !featuredSet.has(item)
     );
+
+
+  /*
+   * COUNTER
+   * =======================================================
+   */
 
   featuredCount.textContent =
     `${featured.length} tools`;
 
+
   latestCount.textContent =
-    `${filtered.length} tools`;
+    `${remaining.length} tools`;
 
 
-  /* FEATURED */
+  /*
+   * =======================================================
+   * RENDER FEATURED
+   * =======================================================
+   */
 
-  if (!featured.length) {
+  if(!featured.length){
 
     featuredGrid.innerHTML = `
-      <div class="state-box">
-        <div class="state-inner">
-          <h3>
-            Tidak ada Featured Tools
-          </h3>
-          <p>
-            Belum ada tools featured yang sesuai dengan pencarian.
-          </p>
-        </div>
+
+      <div class="empty">
+
+        <strong>
+          Belum ada Featured Tools
+        </strong>
+
+        <span>
+          Tandai maksimal 5 tools sebagai TRUE
+          pada kolom Featured di Google Sheets.
+        </span>
+
       </div>
+
     `;
 
-  } else {
+  }else{
 
     featuredGrid.innerHTML =
       featured
-        .map(item =>
-          createCard(item, true)
+        .map(
+          item =>
+            createCard(
+              item,
+              true
+            )
         )
         .join("");
 
   }
 
 
-  /* ALL TOOLS */
+  /*
+   * =======================================================
+   * RENDER SEMUA TOOL LAINNYA
+   * =======================================================
+   */
 
-  if (!filtered.length) {
+  if(!remaining.length){
 
     toolsGrid.innerHTML = `
-      <div class="state-box">
-        <div class="state-inner">
-          <h3>
-            Tools tidak ditemukan
-          </h3>
-          <p>
-            Coba gunakan kata pencarian atau filter OS yang berbeda.
-          </p>
-        </div>
+
+      <div class="empty">
+
+        <strong>
+          Tidak ada tools lainnya.
+        </strong>
+
+        <span>
+          Semua tools yang ditemukan sedang berada
+          di Featured.
+        </span>
+
       </div>
+
     `;
 
-  } else {
+  }else{
 
     toolsGrid.innerHTML =
-      filtered
-        .map(item =>
-          createCard(item, false)
+      remaining
+        .map(
+          item =>
+            createCard(
+              item,
+              false
+            )
         )
         .join("");
 
@@ -1557,51 +2093,43 @@ function render() {
 
 /* =========================================================
    LOAD GOOGLE SHEETS
-   ========================================================= */
+========================================================= */
 
-async function loadTools() {
+async function loadTools(){
 
-  try {
-
-    toolsGrid.innerHTML = `
-      <div class="state-box">
-        <div class="state-inner">
-          <h3>
-            Memuat tools...
-          </h3>
-          <p>
-            Mengambil data dari Google Sheets.
-          </p>
-        </div>
-      </div>
-    `;
+  try{
 
     featuredGrid.innerHTML = `
-      <div class="state-box">
-        <div class="state-inner">
-          <h3>
-            Memuat tools...
-          </h3>
-          <p>
-            Mengambil data dari Google Sheets.
-          </p>
-        </div>
+
+      <div class="loading">
+        Mengambil featured tools...
       </div>
+
+    `;
+
+
+    toolsGrid.innerHTML = `
+
+      <div class="loading">
+        Mengambil semua tools...
+      </div>
+
     `;
 
 
     const response =
       await fetch(
         CSV_URL +
-        "&cache=" +
+        "&t=" +
         Date.now()
       );
 
 
-    if (!response.ok) {
+    if(!response.ok){
 
       throw new Error(
-        `Google Sheets HTTP ${response.status}`
+        "Google Sheets CSV HTTP " +
+        response.status
       );
 
     }
@@ -1611,13 +2139,13 @@ async function loadTools() {
       await response.text();
 
 
-    if (
+    if(
       !csvText ||
       csvText.trim().length < 10
-    ) {
+    ){
 
       throw new Error(
-        "Data CSV Google Sheets kosong."
+        "CSV Google Sheets kosong."
       );
 
     }
@@ -1627,133 +2155,137 @@ async function loadTools() {
       parseCSV(csvText);
 
 
-    if (!data.length) {
-
-      throw new Error(
-        "Tidak ada data dari Google Sheets."
-      );
-
-    }
-
-
     /*
-     * PENTING:
-     *
-     * Jangan menggunakan:
-     * Category === "Tools"
-     *
-     * karena Category pada Sheet berisi
-     * kategori seperti Utility, Networking,
-     * Security, System, dll.
-     *
-     * Halaman Tools menggunakan kolom TYPE.
+     * HANYA DATA TOOLS
      */
 
     allTools =
       data.filter(item => {
 
         const type =
-          String(item.type || "")
-            .trim()
-            .toLowerCase();
+          String(
+            item.type || ""
+          )
+          .trim()
+          .toLowerCase();
+
+
+        const category =
+          String(
+            item.category || ""
+          )
+          .trim()
+          .toLowerCase();
+
+
+        /*
+         * Menerima:
+         *
+         * Type = Tools
+         *
+         * ATAU
+         *
+         * Category = Tools
+         *
+         * supaya data tetap aman kalau struktur
+         * Google Sheet sedikit berbeda.
+         */
 
         return (
+          type === "tools" ||
           type === "tool" ||
-          type === "tools"
+          category === "tools" ||
+          category === "tool"
         );
 
       });
 
 
     /*
-     * Fallback tambahan:
-     * jika data Sheet memakai Type yang
-     * tidak konsisten tetapi kategorinya
-     * memang tool/utility.
+     * HANYA PUBLISHED
      */
 
-    if (!allTools.length) {
+    allTools =
+      allTools.filter(
+        item =>
+          isPublished(item)
+      );
 
-      allTools =
-        data.filter(item => {
 
-          const category =
-            String(item.category || "")
-              .trim()
-              .toLowerCase();
-
-          return [
-            "tools",
-            "tool",
-            "utility",
-            "utilities",
-            "system utility",
-            "networking",
-            "security",
-            "maintenance"
-          ].includes(category);
-
-        });
-
-    }
-
+    /*
+     * FILTER OS
+     */
 
     populateOSFilter(
       allTools
     );
 
+
+    /*
+     * RENDER
+     */
+
     render();
 
 
     console.log(
-      `AKT: ${allTools.length} tools berhasil dimuat.`
+      "AKT Tools loaded:",
+      allTools.length
     );
 
-  }
 
-  catch (error) {
+    console.log(
+      "AKT Tools data:",
+      allTools
+    );
+
+  }catch(error){
 
     console.error(
-      "AKT Tools Error:",
+      "AKT TOOLS ERROR:",
       error
     );
 
 
     featuredGrid.innerHTML = `
-      <div class="state-box error-box">
-        <div class="state-inner">
 
-          <h3>
-            Gagal memuat Tools
-          </h3>
+      <div class="error">
 
-          <p>
-            Google Sheets tidak dapat dibaca.
-          </p>
+        <strong>
+          Gagal memuat Featured Tools.
+        </strong>
 
-          <p style="margin-top:8px;">
-            Detail: ${escapeHTML(error.message)}
-          </p>
+        <span>
+          Google Sheets CSV tidak dapat dibaca.
+        </span>
 
-        </div>
+        <small>
+          ${escapeHTML(error.message)}
+        </small>
+
       </div>
+
     `;
 
 
     toolsGrid.innerHTML = `
-      <div class="state-box error-box">
-        <div class="state-inner">
 
-          <h3>
-            Gagal memuat data AKT
-          </h3>
+      <div class="error">
 
-          <p>
-            Pastikan Google Sheet sudah dipublish sebagai CSV dan dapat diakses publik.
-          </p>
+        <strong>
+          Gagal memuat Tools.
+        </strong>
 
-        </div>
+        <span>
+          Periksa publikasi Google Sheets CSV.
+        </span>
+
+        <small>
+          ${escapeHTML(error.message)}
+        </small>
+
       </div>
+
     `;
 
   }
@@ -1763,17 +2295,19 @@ async function loadTools() {
 
 /* =========================================================
    EVENTS
-   ========================================================= */
+========================================================= */
 
 searchInput.addEventListener(
   "input",
   render
 );
 
+
 osFilter.addEventListener(
   "change",
   render
 );
+
 
 sortFilter.addEventListener(
   "change",
@@ -1783,7 +2317,7 @@ sortFilter.addEventListener(
 
 /* =========================================================
    START
-   ========================================================= */
+========================================================= */
 
 loadTools();
 
