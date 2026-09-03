@@ -9,7 +9,6 @@
 <meta name="description" content="AKT menyediakan software, game, tools, PDF, dan berbagai informasi bermanfaat dalam satu tempat.">
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -21,90 +20,57 @@ html{
 }
 
 body{
-    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     background:#fcfaff;
-    color:#282231;
-    line-height:1.6;
+    color:#292238;
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
-
-button,
-input{
-    font:inherit;
-}
-
-
-/* =========================
-   NAVBAR
-========================= */
 
 nav{
     position:sticky;
     top:0;
     z-index:1000;
-
     background:rgba(255,255,255,.94);
     backdrop-filter:blur(18px);
-
-    border-bottom:1px solid #eee6f5;
+    border-bottom:1px solid #eee5f5;
 }
 
 .nav-inner{
     max-width:1200px;
     margin:auto;
     padding:13px 24px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
 }
 
 .logo{
     display:flex;
     align-items:center;
     gap:9px;
-
-    font-size:1.35rem;
     font-weight:900;
-    letter-spacing:-.05em;
+    font-size:1.3rem;
 }
 
 .logo-mark{
     width:34px;
     height:34px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:10px;
-
     color:#fff;
-
-    background:linear-gradient(
-        135deg,
-        #b568f2,
-        #ec7bc9
-    );
-
-    box-shadow:
-        0 8px 20px rgba(181,104,242,.25);
-
-    font-size:.82rem;
+    font-size:.78rem;
+    background:linear-gradient(135deg,#b86df1,#e878ca);
+    box-shadow:0 8px 20px rgba(181,104,242,.25);
 }
 
 .logo-text{
-    background:linear-gradient(
-        135deg,
-        #332442,
-        #965bd5
-    );
-
+    background:linear-gradient(135deg,#332442,#965bd5);
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
@@ -114,65 +80,38 @@ nav{
     display:flex;
     align-items:center;
     gap:25px;
-
-    color:#6c6375;
-
-    font-size:.78rem;
+    color:#6e6577;
+    font-size:.77rem;
     font-weight:700;
 }
 
-.nav-links a{
-    transition:.2s ease;
-}
-
 .nav-links a:hover{
-    color:#8c56d4;
+    color:#8755cf;
 }
 
 .nav-explore{
-    padding:8px 16px;
-
+    padding:8px 15px;
     border-radius:10px;
-
-    background:#f2e8ff;
-
-    color:#8051ca !important;
+    background:#f1e6ff;
+    color:#8051ca!important;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     overflow:hidden;
-
     background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(237,184,244,.34),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 5% 90%,
-            rgba(190,165,255,.22),
-            transparent 32%
-        ),
-        linear-gradient(
-            135deg,
-            #fcf7ff,
-            #f8efff 55%,
-            #fff3fb
-        );
+        radial-gradient(circle at 85% 20%,rgba(237,184,244,.34),transparent 32%),
+        radial-gradient(circle at 5% 90%,rgba(190,165,255,.22),transparent 32%),
+        linear-gradient(135deg,#fcf7ff,#f8efff 55%,#fff3fb);
 }
 
 .hero-inner{
     max-width:1200px;
     min-height:390px;
-
     margin:auto;
     padding:55px 24px;
-
     display:grid;
     grid-template-columns:1fr 1fr;
     align-items:center;
@@ -182,139 +121,76 @@ nav{
 .welcome{
     display:inline-flex;
     padding:6px 12px;
-
     border-radius:999px;
-
     background:#fff;
     border:1px solid #e8daf5;
-
     color:#8051ce;
-
     font-size:.68rem;
     font-weight:800;
-
     margin-bottom:17px;
-
-    box-shadow:
-        0 5px 16px rgba(80,45,100,.05);
 }
 
 .hero h1{
-    max-width:620px;
-
-    font-size:clamp(
-        2.7rem,
-        5vw,
-        4.2rem
-    );
-
+    font-size:clamp(2.7rem,5vw,4.2rem);
     line-height:.99;
-
     letter-spacing:-.065em;
-
-    color:#292039;
-
     margin-bottom:20px;
 }
 
 .gradient-text{
     display:block;
-
-    background:linear-gradient(
-        135deg,
-        #9b58db,
-        #d96ac7
-    );
-
+    background:linear-gradient(135deg,#9b58db,#d96ac7);
     -webkit-background-clip:text;
     background-clip:text;
-
     color:transparent;
 }
 
 .hero-description{
     max-width:570px;
-
     color:#70677a;
-
     font-size:.87rem;
-
+    line-height:1.7;
     margin-bottom:23px;
 }
 
 .search-box{
     max-width:590px;
-
     display:flex;
     align-items:center;
-
     padding:5px;
-
     background:#fff;
-
     border:1px solid #eadff2;
-
     border-radius:14px;
-
-    box-shadow:
-        0 10px 27px rgba(78,46,105,.07);
+    box-shadow:0 10px 27px rgba(78,46,105,.07);
 }
 
 .search-box input{
     flex:1;
     min-width:0;
-
     border:0;
     outline:0;
-
-    background:transparent;
-
     padding:12px 14px;
-
-    color:#30283a;
-
+    background:transparent;
     font-size:.78rem;
 }
 
 .search-box button{
     border:0;
-
     padding:10px 19px;
-
     border-radius:10px;
-
     color:#fff;
-
     cursor:pointer;
-
     font-size:.74rem;
     font-weight:800;
-
-    background:linear-gradient(
-        135deg,
-        #a263eb,
-        #d966ca
-    );
-
-    transition:.2s ease;
-}
-
-.search-box button:hover{
-    transform:translateY(-1px);
-    box-shadow:
-        0 7px 18px rgba(148,83,204,.22);
+    background:linear-gradient(135deg,#a263eb,#d966ca);
 }
 
 
-/* =========================
-   HERO VISUAL
-========================= */
+/* HERO VISUAL */
 
 .hero-visual{
     min-height:275px;
-
     position:relative;
-
     display:flex;
     align-items:center;
     justify-content:center;
@@ -322,82 +198,44 @@ nav{
 
 .visual-orb{
     position:absolute;
-
     width:215px;
     height:215px;
-
     border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #d8b9ff,
-            #b995ef 45%,
-            #e9a7d9
-        );
-
+    background:radial-gradient(circle at 35% 30%,#d8b9ff,#b995ef 45%,#e9a7d9);
     opacity:.72;
-
-    animation:orbFloat 5s ease-in-out infinite;
 }
 
 .visual-card{
     width:190px;
     height:215px;
-
     position:relative;
     z-index:2;
-
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-
     gap:17px;
-
     border-radius:22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.96),
-            rgba(255,245,255,.88)
-        );
-
+    background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(255,245,255,.88));
     border:1px solid rgba(255,255,255,.9);
-
     transform:rotate(-7deg);
-
-    box-shadow:
-        0 25px 45px rgba(111,65,142,.17);
-
-    animation:cardFloat 5s ease-in-out infinite;
+    box-shadow:0 25px 45px rgba(111,65,142,.17);
 }
 
 .visual-icon{
     width:58px;
     height:58px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:16px;
-
     color:#fff;
-
     font-size:1.7rem;
-
-    background:linear-gradient(
-        135deg,
-        #a763ef,
-        #e17acb
-    );
+    background:linear-gradient(135deg,#a763ef,#e17acb);
 }
 
 .visual-lines{
     width:110px;
-
     display:flex;
     flex-direction:column;
     gap:9px;
@@ -405,9 +243,7 @@ nav{
 
 .visual-line{
     height:7px;
-
     border-radius:999px;
-
     background:#dfd3e9;
 }
 
@@ -419,40 +255,13 @@ nav{
     width:88%;
 }
 
-@keyframes orbFloat{
 
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-12px);
-    }
-}
-
-@keyframes cardFloat{
-
-    0%,100%{
-        transform:rotate(-7deg) translateY(0);
-    }
-
-    50%{
-        transform:rotate(-4deg) translateY(-8px);
-    }
-}
-
-
-/* =========================
-   GENERAL SECTION
-========================= */
+/* SECTIONS */
 
 .section{
     max-width:1200px;
-
     margin:auto;
-
-    padding:
-        43px 24px 0;
+    padding:43px 24px 0;
 }
 
 .section-heading{
@@ -462,9 +271,6 @@ nav{
 .section-heading h2{
     font-size:1.2rem;
     letter-spacing:-.035em;
-
-    color:#2b2435;
-
     margin-bottom:3px;
 }
 
@@ -474,73 +280,49 @@ nav{
 }
 
 
-/* =========================
-   CATEGORY
-========================= */
+/* CATEGORY */
 
 .category-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(6,1fr);
-
+    grid-template-columns:repeat(6,1fr);
     gap:10px;
 }
 
 .category-card{
     min-height:67px;
-
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-
     gap:5px;
-
     border-radius:11px;
-
     border:1px solid #e9e0f1;
-
     background:#fff;
-
     color:#62596d;
-
     font-size:.63rem;
     font-weight:750;
-
-    transition:.2s ease;
+    transition:.2s;
 }
 
 .category-card:hover{
     transform:translateY(-3px);
-
     border-color:#d9c5f0;
-
-    box-shadow:
-        0 9px 22px rgba(81,45,110,.07);
-
+    box-shadow:0 9px 22px rgba(81,45,110,.07);
     color:#8754d0;
 }
 
 .category-icon{
     width:25px;
     height:25px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:8px;
-
     background:#f3ecfc;
-
-    font-size:.82rem;
 }
 
 
-/* =========================
-   LATEST
-========================= */
+/* LATEST */
 
 .latest-section{
     padding-top:58px;
@@ -551,339 +333,204 @@ nav{
     display:flex;
     align-items:flex-end;
     justify-content:space-between;
-
     gap:20px;
-
     margin-bottom:17px;
 }
 
 .view-all{
     padding:8px 14px;
-
     border-radius:10px;
-
     background:#f1e8ff;
-
     color:#8051ca;
-
     font-size:.7rem;
     font-weight:800;
-
-    white-space:nowrap;
-}
-
-.view-all:hover{
-    background:#e7dbfa;
 }
 
 .latest-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:19px;
 }
 
 
-/* =========================
-   CARD
-========================= */
+/* CARDS */
 
 .download-card{
     overflow:hidden;
-
     background:#fff;
-
     border:1px solid #ece4f2;
-
     border-radius:19px;
-
-    box-shadow:
-        0 8px 25px rgba(62,38,82,.045);
-
-    transition:
-        transform .22s ease,
-        box-shadow .22s ease;
+    box-shadow:0 8px 25px rgba(62,38,82,.045);
+    transition:.22s;
 }
 
 .download-card:hover{
     transform:translateY(-5px);
-
-    box-shadow:
-        0 17px 35px rgba(68,39,92,.09);
+    box-shadow:0 17px 35px rgba(68,39,92,.09);
 }
 
 .card-visual{
     height:200px;
-
     position:relative;
-
     display:flex;
     align-items:center;
     justify-content:center;
 
     background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(207,176,255,.42),
-            transparent 34%
-        ),
-        radial-gradient(
-            circle at 80% 80%,
-            rgba(250,189,228,.40),
-            transparent 34%
-        ),
-        linear-gradient(
-            135deg,
-            #eee1ff,
-            #ffeaf8
-        );
+        radial-gradient(circle at 20% 20%,rgba(207,176,255,.42),transparent 34%),
+        radial-gradient(circle at 80% 80%,rgba(250,189,228,.40),transparent 34%),
+        linear-gradient(135deg,#eee1ff,#ffeaf8);
 }
 
 .featured-badge{
     position:absolute;
-
     top:17px;
     left:17px;
-
     padding:6px 11px;
-
     border-radius:9px;
-
     background:rgba(255,255,255,.94);
-
     color:#8752d5;
-
     font-size:.61rem;
     font-weight:850;
-
-    box-shadow:
-        0 4px 12px rgba(80,45,100,.06);
 }
 
 .thumbnail-wrap{
     width:105px;
     height:105px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:27px;
-
     background:rgba(255,255,255,.72);
-
     border:1px solid rgba(255,255,255,.9);
-
-    box-shadow:
-        0 14px 28px rgba(87,45,110,.08);
-
+    box-shadow:0 14px 28px rgba(87,45,110,.08);
     overflow:hidden;
 }
 
 .thumbnail-wrap img{
     width:72px;
     height:72px;
-
     object-fit:contain;
-
     border-radius:16px;
 }
 
 .thumbnail-fallback{
     width:72px;
     height:72px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:18px;
-
     background:#fff;
-
     font-size:2.1rem;
-
-    box-shadow:
-        0 8px 20px rgba(80,40,100,.07);
 }
 
 .card-content{
-    padding:18px 18px 17px;
+    padding:18px;
 }
 
 .card-category{
     display:inline-flex;
-
     padding:5px 9px;
-
     border-radius:8px;
-
     background:#f1e8ff;
-
     color:#8152ca;
-
     font-size:.6rem;
     font-weight:850;
-
     text-transform:uppercase;
-
     margin-bottom:10px;
 }
 
 .card-content h3{
-    color:#282131;
-
     font-size:1rem;
-
     line-height:1.3;
-
-    letter-spacing:-.025em;
-
     margin-bottom:8px;
 }
 
 .card-description{
     min-height:66px;
-
     color:#807687;
-
     font-size:.73rem;
-
     line-height:1.6;
-
     display:-webkit-box;
-
     -webkit-line-clamp:3;
-
     -webkit-box-orient:vertical;
-
     overflow:hidden;
-
     margin-bottom:13px;
 }
 
 .card-meta{
     display:flex;
     flex-wrap:wrap;
-
     gap:6px;
-
     margin-bottom:13px;
 }
 
 .meta-pill{
     padding:5px 8px;
-
     border-radius:7px;
-
     background:#faf8fc;
-
     border:1px solid #f0eaf4;
-
     color:#786e81;
-
     font-size:.6rem;
 }
 
 .card-download{
     width:100%;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     padding:10px;
-
     border-radius:10px;
-
     color:#fff;
-
-    background:
-        linear-gradient(
-            135deg,
-            #9b60e5,
-            #d568c8
-        );
-
+    background:linear-gradient(135deg,#9b60e5,#d568c8);
     font-size:.72rem;
     font-weight:800;
-
-    transition:.2s ease;
-}
-
-.card-download:hover{
-    box-shadow:
-        0 8px 18px rgba(147,82,202,.2);
 }
 
 .card-download.disabled{
     background:#eeeaf2;
     color:#968d9d;
-
-    pointer-events:none;
 }
 
 
-/* =========================
-   STATUS
-========================= */
+/* LOADING / ERROR */
 
 .latest-loading,
 .latest-empty,
 .latest-error{
-    grid-column:1 / -1;
-
+    grid-column:1/-1;
     padding:50px 20px;
-
     text-align:center;
-
     border:1px dashed #ddd1e8;
-
     border-radius:18px;
-
     background:#fff;
-
     color:#82778c;
-
     font-size:.85rem;
 }
 
 .latest-error strong{
     display:block;
-
     color:#765c87;
-
-    margin-bottom:5px;
+    margin-bottom:7px;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     padding:30px 24px;
-
     border-top:1px solid #eee6f4;
-
     background:#faf8fd;
 }
 
 .footer-inner{
     max-width:1200px;
-
     margin:auto;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    gap:20px;
-
     color:#887f91;
-
     font-size:.72rem;
 }
 
@@ -893,32 +540,24 @@ footer{
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:1050px){
 
     .latest-grid{
-        grid-template-columns:
-            repeat(3,1fr);
+        grid-template-columns:repeat(3,1fr);
     }
 
     .category-grid{
-        grid-template-columns:
-            repeat(3,1fr);
+        grid-template-columns:repeat(3,1fr);
     }
-
 }
 
 @media(max-width:800px){
 
     .hero-inner{
         grid-template-columns:1fr;
-
         text-align:center;
-
-        padding-top:48px;
     }
 
     .hero-description,
@@ -927,24 +566,13 @@ footer{
         margin-right:auto;
     }
 
-    .hero-visual{
-        min-height:230px;
-    }
-
     .latest-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .nav-links{
         gap:12px;
     }
-
-    .nav-links a:nth-child(4),
-    .nav-links a:nth-child(5){
-        display:none;
-    }
-
 }
 
 @media(max-width:520px){
@@ -953,18 +581,9 @@ footer{
         padding:12px 16px;
     }
 
-    .logo{
-        font-size:1.2rem;
-    }
-
-    .logo-mark{
-        width:30px;
-        height:30px;
-    }
-
     .nav-links{
-        font-size:.66rem;
         gap:9px;
+        font-size:.65rem;
     }
 
     .nav-explore{
@@ -972,20 +591,11 @@ footer{
     }
 
     .hero-inner{
-        padding:
-            45px 18px 30px;
+        padding:45px 18px 30px;
     }
 
     .hero h1{
         font-size:2.7rem;
-    }
-
-    .search-box{
-        width:100%;
-    }
-
-    .search-box button{
-        padding:10px 14px;
     }
 
     .section{
@@ -994,96 +604,47 @@ footer{
     }
 
     .category-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .latest-grid{
         grid-template-columns:1fr;
     }
 
-    .latest-heading{
-        align-items:center;
-    }
-
     .footer-inner{
         flex-direction:column;
-
-        text-align:center;
+        gap:8px;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
-
 <nav>
-
 <div class="nav-inner">
 
 <a href="index.html" class="logo">
-
-<span class="logo-mark">
-AK
-</span>
-
-<span class="logo-text">
-AKT
-</span>
-
+<span class="logo-mark">AK</span>
+<span class="logo-text">AKT</span>
 </a>
-
 
 <div class="nav-links">
-
-<a href="index.html">
-Home
-</a>
-
-<a href="software.html">
-Software
-</a>
-
-<a href="games.html">
-Games
-</a>
-
-<a href="#">
-Tools
-</a>
-
-<a href="#">
-Knowledge
-</a>
-
-<a href="#latest" class="nav-explore">
-Explore
-</a>
-
+<a href="index.html">Home</a>
+<a href="software.html">Software</a>
+<a href="games.html">Games</a>
+<a href="#">Tools</a>
+<a href="#">Knowledge</a>
+<a href="#latest" class="nav-explore">Explore</a>
 </div>
 
 </div>
-
 </nav>
 
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
 
 <header class="hero">
 
 <div class="hero-inner">
-
 
 <div>
 
@@ -1091,26 +652,18 @@ Explore
 ✦ Welcome to AKT
 </div>
 
-
 <h1>
-
 Download Apa Pun.
-
 <span class="gradient-text">
 Ilmu Dimana Pun.
 </span>
-
 </h1>
 
-
 <p class="hero-description">
-
 Temukan software, game, tools, PDF, dan berbagai
 informasi bermanfaat dalam satu tempat yang simpel
 dan nyaman.
-
 </p>
-
 
 <form class="search-box" id="heroSearch">
 
@@ -1130,39 +683,28 @@ Search
 </div>
 
 
-
 <div class="hero-visual">
 
 <div class="visual-orb"></div>
 
 <div class="visual-card">
 
-<div class="visual-icon">
-✦
-</div>
+<div class="visual-icon">✦</div>
 
 <div class="visual-lines">
-
 <div class="visual-line"></div>
 <div class="visual-line"></div>
 <div class="visual-line"></div>
-
 </div>
 
 </div>
 
 </div>
-
 
 </div>
 
 </header>
 
-
-
-<!-- =====================================================
-     CATEGORIES
-===================================================== -->
 
 <section class="section">
 
@@ -1181,99 +723,42 @@ Temukan apa yang kamu butuhkan.
 
 <div class="category-grid">
 
-
 <a href="software.html" class="category-card">
-
-<span class="category-icon">
-💻
-</span>
-
-<span>
-Software
-</span>
-
+<span class="category-icon">💻</span>
+<span>Software</span>
 </a>
-
 
 <a href="games.html" class="category-card">
-
-<span class="category-icon">
-🎮
-</span>
-
-<span>
-Games
-</span>
-
+<span class="category-icon">🎮</span>
+<span>Games</span>
 </a>
-
 
 <a href="#" class="category-card">
-
-<span class="category-icon">
-🧰
-</span>
-
-<span>
-Tools
-</span>
-
+<span class="category-icon">🧰</span>
+<span>Tools</span>
 </a>
-
 
 <a href="#" class="category-card">
-
-<span class="category-icon">
-📱
-</span>
-
-<span>
-Android
-</span>
-
+<span class="category-icon">📱</span>
+<span>Android</span>
 </a>
-
 
 <a href="#" class="category-card">
-
-<span class="category-icon">
-📄
-</span>
-
-<span>
-PDF
-</span>
-
+<span class="category-icon">📄</span>
+<span>PDF</span>
 </a>
-
 
 <a href="#" class="category-card">
-
-<span class="category-icon">
-📚
-</span>
-
-<span>
-Ilmu & HR
-</span>
-
+<span class="category-icon">📚</span>
+<span>Ilmu & HR</span>
 </a>
-
 
 </div>
 
 </section>
 
 
-
-<!-- =====================================================
-     LATEST DOWNLOADS
-===================================================== -->
-
-<section
-class="section latest-section"
-id="latest"
->
+<section class="section latest-section" id="latest">
 
 <div class="latest-heading">
 
@@ -1289,28 +774,17 @@ Konten terbaru di AKT.
 
 </div>
 
-
-<a
-href="software.html"
-class="view-all"
->
-
+<a href="software.html" class="view-all">
 View All →
-
 </a>
 
 </div>
 
 
-<div
-class="latest-grid"
-id="latestGrid"
->
+<div class="latest-grid" id="latestGrid">
 
 <div class="latest-loading">
-
-Memuat konten AKT...
-
+Menghubungkan ke AKT Content...
 </div>
 
 </div>
@@ -1318,34 +792,17 @@ Memuat konten AKT...
 </section>
 
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer>
 
 <div class="footer-inner">
 
 <div>
-
-<span class="footer-logo">
-AKT
-</span>
-
-<span>
-— Downloads & Knowledge
-</span>
-
+<span class="footer-logo">AKT</span>
+<span> — Downloads & Knowledge</span>
 </div>
 
-
 <div>
-
-©
-<span id="year"></span>
-AKT
-
+© <span id="year"></span> AKT
 </div>
 
 </div>
@@ -1353,1015 +810,695 @@ AKT
 </footer>
 
 
-
 <script>
 
-/* =====================================================
-   GOOGLE SHEETS
+/*
+==========================================================
+ AKT GOOGLE SHEETS
+==========================================================
 
-   INI URL YANG KAMU BERIKAN
-===================================================== */
+Kita memakai Published Google Sheets milik kamu.
+Tidak menggunakan API key.
+==========================================================
+*/
 
 const AKT_SHEET_URL =
 "https://docs.google.com/spreadsheets/d/e/2PACX-1vTmhKZ9XD_fsfwXXAhpzIv-LZGER5Uy-J-RI1Lgj3P6viDWqKiuED4k9tNu6qRdp1uueO1XGka22k20m/pub?gid=0&single=true&output=csv";
 
 
-let aktData = [];
-
-
-/* =====================================================
-   NORMALIZE TEXT
-===================================================== */
-
-function clean(value){
-
-return String(value ?? "")
-.trim();
-
-}
-
-
-/* =====================================================
-   HTML ESCAPE
-===================================================== */
-
-function escapeHTML(value){
-
-return String(value ?? "")
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
-
-}
-
-
-/* =====================================================
-   CSV PARSER
-
-   Parser ini menangani:
-   - koma
-   - tanda kutip
-   - deskripsi panjang
-===================================================== */
+/*
+==========================================================
+ CSV PARSER
+==========================================================
+*/
 
 function parseCSV(text){
 
-const rows = [];
+    const rows=[];
+    let row=[];
+    let cell="";
+    let insideQuotes=false;
 
-let row = [];
-let cell = "";
+    for(let i=0;i<text.length;i++){
 
-let quoted = false;
+        const char=text[i];
+        const next=text[i+1];
 
+        if(char === '"'){
 
-for(
-let i=0;
-i<text.length;
-i++
-){
+            if(insideQuotes && next === '"'){
+                cell += '"';
+                i++;
+            }else{
+                insideQuotes=!insideQuotes;
+            }
 
-const char = text[i];
-const next = text[i + 1];
+        }else if(char === "," && !insideQuotes){
 
+            row.push(cell);
+            cell="";
 
-if(char === '"'){
+        }else if(
+            (char === "\n" || char === "\r") &&
+            !insideQuotes
+        ){
 
-if(quoted && next === '"'){
+            if(char === "\r" && next === "\n"){
+                i++;
+            }
 
-cell += '"';
+            row.push(cell);
+            cell="";
 
-i++;
+            if(row.some(v => String(v).trim() !== "")){
+                rows.push(row);
+            }
 
-}else{
+            row=[];
 
-quoted = !quoted;
+        }else{
 
+            cell += char;
+
+        }
+    }
+
+    if(cell !== "" || row.length){
+
+        row.push(cell);
+
+        if(row.some(v => String(v).trim() !== "")){
+            rows.push(row);
+        }
+    }
+
+    return rows;
 }
 
-}
-
-
-else if(
-char === "," &&
-!quoted
-){
-
-row.push(cell);
-
-cell = "";
-
-}
-
-
-else if(
-(
-char === "\n" ||
-char === "\r"
-) &&
-!quoted
-){
-
-if(
-char === "\r" &&
-next === "\n"
-){
-
-i++;
-
-}
-
-row.push(cell);
-
-cell = "";
-
-
-if(
-row.some(
-x => clean(x) !== ""
-)
-){
-
-rows.push(row);
-
-}
-
-row = [];
-
-}
-
-
-else{
-
-cell += char;
-
-}
-
-}
-
-
-if(
-cell !== "" ||
-row.length > 0
-){
-
-row.push(cell);
-
-if(
-row.some(
-x => clean(x) !== ""
-)
-){
-
-rows.push(row);
-
-}
-
-}
-
-
-return rows;
-
-}
-
-
-/* =====================================================
-   LOAD GOOGLE SHEETS
-===================================================== */
-
-async function loadAKTData(){
-
-const grid =
-document.getElementById("latestGrid");
-
-
-try{
 
 /*
-   Cache busting supaya GitHub Pages
-   tidak menggunakan CSV lama.
+==========================================================
+ CLEAN
+==========================================================
 */
 
-const separator =
-AKT_SHEET_URL.includes("?")
-? "&"
-: "?";
+function clean(value){
 
-
-const url =
-AKT_SHEET_URL +
-separator +
-"_akt=" +
-Date.now();
-
-
-const response =
-await fetch(
-url,
-{
-method:"GET",
-cache:"no-store"
-}
-);
-
-
-if(!response.ok){
-
-throw new Error(
-"HTTP " +
-response.status
-);
-
-}
-
-
-const csv =
-await response.text();
-
-
-if(
-!csv ||
-csv.trim().length < 5
-){
-
-throw new Error(
-"CSV kosong."
-);
-
-}
-
-
-const rows =
-parseCSV(csv);
-
-
-if(
-!rows.length
-){
-
-throw new Error(
-"Tidak ada data."
-);
+    return String(value ?? "")
+        .replace(/^\uFEFF/,"")
+        .trim();
 
 }
 
 
 /*
-   Header dari Google Sheets
+==========================================================
+ ESCAPE HTML
+==========================================================
 */
 
-const headers =
-rows[0].map(
-header =>
-clean(header)
-);
+function escapeHTML(value){
+
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
 
 
 /*
-   Convert setiap row
-   menjadi object.
+==========================================================
+ FALLBACK ICON
+==========================================================
 */
 
-aktData =
-rows
-.slice(1)
-.map(row => {
+function getIcon(item){
 
-const item = {};
+    const type =
+        clean(item.Type).toLowerCase();
 
+    const category =
+        clean(item.Category).toLowerCase();
 
-headers.forEach(
-(header,index) => {
+    const combined =
+        type + " " + category;
 
-if(header){
+    if(combined.includes("game")){
+        return "🎮";
+    }
 
-item[header] =
-clean(
-row[index]
-);
+    if(combined.includes("tool")){
+        return "🧰";
+    }
 
-}
+    if(combined.includes("pdf")){
+        return "📄";
+    }
 
-});
+    if(
+        combined.includes("hr") ||
+        combined.includes("knowledge") ||
+        combined.includes("ilmu")
+    ){
+        return "📚";
+    }
 
+    if(combined.includes("android")){
+        return "📱";
+    }
 
-return item;
-
-})
-.filter(item => {
-
-return Object.values(item)
-.some(
-value =>
-clean(value) !== ""
-);
-
-});
-
-
-renderLatest();
-
-
-}catch(error){
-
-console.error(
-"AKT Google Sheets error:",
-error
-);
-
-
-grid.innerHTML = `
-
-<div class="latest-error">
-
-<strong>
-Gagal memuat konten AKT.
-</strong>
-
-<span>
-Google Sheets tidak dapat dibaca oleh halaman ini.
-</span>
-
-</div>
-
-`;
-
-}
-
+    return "💻";
 }
 
 
-/* =====================================================
-   GET TYPE
-===================================================== */
-
-function getType(item){
-
-return clean(
-item.Type
-).toLowerCase();
-
-}
-
-
-/* =====================================================
-   FALLBACK ICON
-===================================================== */
-
-function getFallbackIcon(item){
-
-const type =
-getType(item);
-
-
-if(
-type.includes("game")
-){
-
-return "🎮";
-
-}
-
-
-if(
-type.includes("tool")
-){
-
-return "🧰";
-
-}
-
-
-if(
-type.includes("pdf")
-){
-
-return "📄";
-
-}
-
-
-if(
-type.includes("knowledge") ||
-type.includes("hr")
-){
-
-return "📚";
-
-}
-
-
-if(
-type.includes("android")
-){
-
-return "📱";
-
-}
-
-
-return "💻";
-
-}
-
-
-/* =====================================================
-   THUMBNAIL
-
-   PRIORITAS:
-
-   1. Thumbnail Sheet
-   2. Favicon Download URL
-   3. Fallback
-===================================================== */
+/*
+==========================================================
+ THUMBNAIL
+==========================================================
+*/
 
 function getThumbnail(item){
 
-const thumbnail =
-clean(
-item.Thumbnail
-);
+    const thumb =
+        clean(item.Thumbnail);
 
+    if(thumb){
+        return thumb;
+    }
 
-/*
-   PRIORITAS 1
-*/
+    const download =
+        clean(item["Download URL"]);
 
-if(thumbnail){
+    if(download){
 
-return thumbnail;
+        try{
 
+            const url =
+                new URL(download);
+
+            return (
+                "https://www.google.com/s2/favicons?domain=" +
+                encodeURIComponent(url.hostname) +
+                "&sz=256"
+            );
+
+        }catch(e){}
+
+    }
+
+    return "";
 }
 
 
 /*
-   PRIORITAS 2
-
-   Download URL
+==========================================================
+ FEATURED
+==========================================================
 */
 
-const downloadURL =
-clean(
-item["Download URL"]
-);
+function featured(item){
 
+    const value =
+        clean(item.Featured).toLowerCase();
 
-if(downloadURL){
-
-try{
-
-const parsed =
-new URL(downloadURL);
-
-
-const domain =
-parsed.hostname
-.replace(
-/^www\./,
-""
-);
-
-
-if(domain){
-
-return (
-"https://www.google.com/s2/favicons?domain=" +
-encodeURIComponent(domain) +
-"&sz=256"
-);
-
-}
-
-}catch(error){
-
-console.warn(
-"Download URL tidak valid:",
-downloadURL
-);
-
-}
-
+    return (
+        value === "true" ||
+        value === "yes" ||
+        value === "1" ||
+        value === "featured"
+    );
 }
 
 
 /*
-   Tidak ada gambar
+==========================================================
+ PUBLISHED
+==========================================================
 */
 
-return "";
+function published(item){
 
-}
+    const status =
+        clean(item.Status).toLowerCase();
 
+    if(!status){
+        return true;
+    }
 
-/* =====================================================
-   FEATURED
-===================================================== */
-
-function isFeatured(item){
-
-const value =
-clean(
-item.Featured
-).toLowerCase();
-
-
-return (
-value === "true" ||
-value === "yes" ||
-value === "1" ||
-value === "featured"
-);
-
-}
-
-
-/* =====================================================
-   STATUS
-===================================================== */
-
-function isPublished(item){
-
-const status =
-clean(
-item.Status
-).toLowerCase();
-
-
-/*
-   Status kosong tetap ditampilkan.
-
-   Ini penting agar content lama
-   tetap muncul.
-*/
-
-if(!status){
-
-return true;
-
-}
-
-
-return (
-status === "published" ||
-status === "publish" ||
-status === "active" ||
-status === "aktif"
-);
-
-}
-
-
-/* =====================================================
-   GET LATEST
-
-   Maksimal 8 item.
-===================================================== */
-
-function getLatest(){
-
-return aktData
-.filter(item =>
-isPublished(item)
-)
-.slice(0,8);
-
-}
-
-
-/* =====================================================
-   CREATE THUMBNAIL HTML
-===================================================== */
-
-function createThumbnail(item){
-
-const title =
-escapeHTML(
-item.Title ||
-"AKT Content"
-);
-
-
-const image =
-getThumbnail(item);
-
-
-const fallback =
-getFallbackIcon(item);
-
-
-if(!image){
-
-return `
-
-<div
-class="thumbnail-fallback"
-aria-label="${title}"
->
-
-${fallback}
-
-</div>
-
-`;
-
+    return (
+        status === "published" ||
+        status === "publish" ||
+        status === "active" ||
+        status === "aktif"
+    );
 }
 
 
 /*
-   Jika gambar dari Sheet gagal,
-   fallback otomatis muncul.
+==========================================================
+ CREATE CARD
+==========================================================
 */
-
-return `
-
-<img
-src="${escapeHTML(image)}"
-alt="${title}"
-loading="lazy"
-onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
->
-
-<div
-class="thumbnail-fallback"
-style="display:none;"
-aria-hidden="true"
->
-
-${fallback}
-
-</div>
-
-`;
-
-}
-
-
-/* =====================================================
-   CREATE CARD
-===================================================== */
 
 function createCard(item){
 
-const title =
-escapeHTML(
-item.Title ||
-"Untitled"
-);
+    const title =
+        clean(item.Title) || "Untitled";
+
+    const description =
+        clean(item.Description) ||
+        "Konten pilihan dari AKT.";
+
+    const category =
+        clean(item.Category) ||
+        clean(item.Type) ||
+        "AKT";
+
+    const version =
+        clean(item.Version);
+
+    const os =
+        clean(item.OS);
+
+    const size =
+        clean(item.Size);
+
+    const download =
+        clean(item["Download URL"]);
+
+    const thumbnail =
+        getThumbnail(item);
+
+    const icon =
+        getIcon(item);
 
 
-const category =
-escapeHTML(
-item.Category ||
-item.Type ||
-"AKT"
-);
+    let meta="";
+
+    if(version){
+        meta += `
+        <span class="meta-pill">
+        ${escapeHTML(version)}
+        </span>`;
+    }
+
+    if(os){
+        meta += `
+        <span class="meta-pill">
+        ${escapeHTML(os)}
+        </span>`;
+    }
+
+    if(size){
+        meta += `
+        <span class="meta-pill">
+        ${escapeHTML(size)}
+        </span>`;
+    }
 
 
-const description =
-escapeHTML(
-item.Description ||
-"Konten pilihan dari AKT."
-);
+    let imageHTML;
+
+    if(thumbnail){
+
+        imageHTML = `
+        <img
+            src="${escapeHTML(thumbnail)}"
+            alt="${escapeHTML(title)}"
+            loading="lazy"
+            onerror="
+                this.style.display='none';
+                this.nextElementSibling.style.display='flex';
+            "
+        >
+
+        <div
+            class="thumbnail-fallback"
+            style="display:none"
+        >
+            ${icon}
+        </div>
+        `;
+
+    }else{
+
+        imageHTML = `
+        <div class="thumbnail-fallback">
+            ${icon}
+        </div>
+        `;
+    }
 
 
-const version =
-escapeHTML(
-item.Version ||
-"Latest"
-);
+    let featuredHTML="";
+
+    if(featured(item)){
+
+        featuredHTML=`
+        <span class="featured-badge">
+            ✦ FEATURED
+        </span>
+        `;
+    }
 
 
-const os =
-escapeHTML(
-item.OS ||
-""
-);
+    let downloadHTML;
+
+    if(download){
+
+        downloadHTML=`
+        <a
+            class="card-download"
+            href="${escapeHTML(download)}"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ↓ Download
+        </a>
+        `;
+
+    }else{
+
+        downloadHTML=`
+        <span class="card-download disabled">
+            Download
+        </span>
+        `;
+    }
 
 
-const size =
-escapeHTML(
-item.Size ||
-""
-);
+    return `
+    <article class="download-card">
 
+        <div class="card-visual">
 
-const downloadURL =
-clean(
-item["Download URL"]
-);
+            ${featuredHTML}
 
+            <div class="thumbnail-wrap">
+                ${imageHTML}
+            </div>
 
-let meta = "";
+        </div>
 
+        <div class="card-content">
 
-if(version){
+            <span class="card-category">
+                ${escapeHTML(category)}
+            </span>
 
-meta += `
+            <h3>
+                ${escapeHTML(title)}
+            </h3>
 
-<span class="meta-pill">
-${version}
-</span>
+            <p class="card-description">
+                ${escapeHTML(description)}
+            </p>
 
-`;
+            ${
+                meta
+                ?
+                `<div class="card-meta">${meta}</div>`
+                :
+                ""
+            }
 
+            ${downloadHTML}
+
+        </div>
+
+    </article>
+    `;
 }
 
 
-if(os){
+/*
+==========================================================
+ LOAD DATA
+==========================================================
+*/
 
-meta += `
+async function loadAKT(){
 
-<span class="meta-pill">
-${os}
-</span>
+    const grid =
+        document.getElementById("latestGrid");
 
-`;
+    try{
 
+        /*
+        Kita minta CSV langsung dari Google.
+        */
+
+        const response =
+            await fetch(
+                AKT_SHEET_URL,
+                {
+                    method:"GET",
+                    mode:"cors",
+                    cache:"no-store"
+                }
+            );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Google Sheets HTTP " +
+                response.status
+            );
+
+        }
+
+
+        const text =
+            await response.text();
+
+
+        console.log(
+            "AKT CSV berhasil diterima:",
+            text.substring(0,300)
+        );
+
+
+        if(
+            !text ||
+            text.trim().length < 10
+        ){
+
+            throw new Error(
+                "Google Sheets mengirim data kosong."
+            );
+
+        }
+
+
+        const rows =
+            parseCSV(text);
+
+
+        if(rows.length < 2){
+
+            throw new Error(
+                "Header atau isi Google Sheets tidak ditemukan."
+            );
+
+        }
+
+
+        /*
+        HEADER
+        */
+
+        const headers =
+            rows[0].map(
+                h => clean(h)
+            );
+
+
+        console.log(
+            "AKT Headers:",
+            headers
+        );
+
+
+        /*
+        DATA
+        */
+
+        const data =
+            rows
+            .slice(1)
+            .map(row => {
+
+                const item={};
+
+                headers.forEach(
+                    (header,index)=>{
+
+                        if(header){
+
+                            item[header] =
+                                clean(
+                                    row[index]
+                                );
+
+                        }
+
+                    }
+                );
+
+                return item;
+
+            })
+            .filter(item =>
+                Object.values(item)
+                    .some(
+                        value =>
+                            clean(value)!==""
+                    )
+            );
+
+
+        console.log(
+            "AKT Content:",
+            data
+        );
+
+
+        /*
+        HANYA PUBLISHED
+        */
+
+        const visible =
+            data.filter(
+                item =>
+                    published(item)
+            );
+
+
+        /*
+        MAKSIMAL 8
+        */
+
+        const latest =
+            visible.slice(0,8);
+
+
+        if(!latest.length){
+
+            grid.innerHTML=`
+
+            <div class="latest-empty">
+
+                Belum ada konten AKT.
+
+                <br>
+
+                <small>
+                Data Google Sheets sudah terbaca,
+                tetapi belum ada konten yang dapat ditampilkan.
+                </small>
+
+            </div>
+
+            `;
+
+            return;
+        }
+
+
+        grid.innerHTML =
+            latest
+            .map(
+                item =>
+                    createCard(item)
+            )
+            .join("");
+
+
+    }catch(error){
+
+        console.error(
+            "AKT ERROR:",
+            error
+        );
+
+
+        grid.innerHTML=`
+
+        <div class="latest-error">
+
+            <strong>
+                Gagal memuat konten AKT.
+            </strong>
+
+            <span>
+                Google Sheets belum dapat dibaca oleh halaman ini.
+            </span>
+
+            <br><br>
+
+            <small>
+                Cek Console browser jika diperlukan.
+            </small>
+
+        </div>
+
+        `;
+    }
 }
 
 
-if(size){
-
-meta += `
-
-<span class="meta-pill">
-${size}
-</span>
-
-`;
-
-}
-
-
-let downloadButton;
-
-
-if(downloadURL){
-
-downloadButton = `
-
-<a
-href="${escapeHTML(downloadURL)}"
-target="_blank"
-rel="noopener noreferrer"
-class="card-download"
->
-
-↓ Download
-
-</a>
-
-`;
-
-}else{
-
-downloadButton = `
-
-<span
-class="card-download disabled"
->
-
-Download
-
-</span>
-
-`;
-
-}
-
-
-let featuredHTML = "";
-
-
-if(isFeatured(item)){
-
-featuredHTML = `
-
-<span class="featured-badge">
-✦ FEATURED
-</span>
-
-`;
-
-}
-
-
-return `
-
-<article class="download-card">
-
-
-<div class="card-visual">
-
-${featuredHTML}
-
-
-<div class="thumbnail-wrap">
-
-${createThumbnail(item)}
-
-</div>
-
-
-</div>
-
-
-
-<div class="card-content">
-
-
-<span class="card-category">
-
-${category}
-
-</span>
-
-
-<h3>
-
-${title}
-
-</h3>
-
-
-<p class="card-description">
-
-${description}
-
-</p>
-
-
-${
-meta
-?
-`
-<div class="card-meta">
-${meta}
-</div>
-`
-:
-""
-}
-
-
-${downloadButton}
-
-
-</div>
-
-
-</article>
-
-`;
-
-}
-
-
-/* =====================================================
-   RENDER LATEST
-===================================================== */
-
-function renderLatest(){
-
-const grid =
-document.getElementById(
-"latestGrid"
-);
-
-
-const latest =
-getLatest();
-
-
-if(!latest.length){
-
-grid.innerHTML = `
-
-<div class="latest-empty">
-
-Belum ada konten AKT.
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-grid.innerHTML =
-latest
-.map(
-item =>
-createCard(item)
-)
-.join("");
-
-}
-
-
-/* =====================================================
-   HERO SEARCH
-===================================================== */
+/*
+==========================================================
+ SEARCH
+==========================================================
+*/
 
 document
 .getElementById("heroSearch")
 .addEventListener(
-"submit",
-function(event){
+    "submit",
+    function(event){
 
-event.preventDefault();
+        event.preventDefault();
+
+        const query =
+            clean(
+                document
+                .getElementById("heroSearchInput")
+                .value
+            )
+            .toLowerCase();
 
 
-const input =
-document.getElementById(
-"heroSearchInput"
+        if(
+            query.includes("game") ||
+            query.includes("games") ||
+            query.includes("emulator")
+        ){
+
+            window.location.href =
+                "games.html";
+
+            return;
+        }
+
+
+        window.location.href =
+            "software.html";
+
+    }
 );
 
 
-const query =
-clean(
-input.value
-);
-
-
-if(!query){
-
-document
-.getElementById("latest")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-return;
-
-}
-
-
-const lower =
-query.toLowerCase();
-
-
 /*
-   Game
+==========================================================
+ YEAR
+==========================================================
 */
-
-if(
-lower.includes("game") ||
-lower.includes("games") ||
-lower.includes("emulator")
-){
-
-window.location.href =
-"games.html";
-
-return;
-
-}
-
-
-/*
-   Software
-*/
-
-if(
-lower.includes("software") ||
-lower.includes("browser") ||
-lower.includes("office") ||
-lower.includes("windows") ||
-lower.includes("linux") ||
-lower.includes("mac")
-){
-
-window.location.href =
-"software.html";
-
-return;
-
-}
-
-
-/*
-   Untuk sementara pencarian
-   umum diarahkan ke software.
-
-   Nanti ketika Tools / PDF /
-   Knowledge sudah selesai,
-   search bisa dibuat universal.
-*/
-
-window.location.href =
-"software.html";
-
-}
-);
-
-
-/* =====================================================
-   YEAR
-===================================================== */
 
 document
 .getElementById("year")
@@ -2369,11 +1506,13 @@ document
 new Date().getFullYear();
 
 
-/* =====================================================
-   START
-===================================================== */
+/*
+==========================================================
+ START
+==========================================================
+*/
 
-loadAKTData();
+loadAKT();
 
 </script>
 
